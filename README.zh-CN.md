@@ -91,12 +91,12 @@ python3 -m http.server 8765
 ## 项目结构
 
 ```
-medical-vocab/
+med-vocab/
 ├── index.html        # 页面结构与视图容器
 ├── styles.css        # 全部样式（CSS 变量主题、响应式）
 ├── app.js            # 应用逻辑：SM-2、测验、统计、跨标签同步
 ├── words.js          # 词库数据 + 学科/分组元数据（构建产物）
-└── build-words.mjs   # 词库生成脚本（Node.js ESM：去重、排序、统计）
+└── build.mjs         # 词库生成脚本（Node.js ESM：去重、排序、统计）
 ```
 
 ### 词库数据格式
@@ -109,7 +109,7 @@ medical-vocab/
 ### 重新生成词库
 
 ```bash
-node build-words.mjs
+node build.mjs
 ```
 
 ## 技术栈

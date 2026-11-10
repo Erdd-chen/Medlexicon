@@ -1,5 +1,5 @@
-/* MediLexicon 词库构建脚本
- * 用法：node build-words.mjs
+/* 词库构建脚本
+ * 用法：node build.mjs
  * 输入：words.js（从中提取现有词条）
  * 输出：words.js（覆盖）
  * 流程：读现有 RAW_WORDS → 追加 NEW_BATCH → 英文小写去重 → 按学科+分组排序 → 自动生成头部统计

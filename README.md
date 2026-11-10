@@ -97,12 +97,12 @@ No install, no build step, no dependencies.
 ## Project structure
 
 ```
-medical-vocab/
+med-vocab/
 ├── index.html        # Markup and view containers
 ├── styles.css        # All styling (CSS variables, responsive)
 ├── app.js            # App logic: SM-2, quiz, stats, cross-tab sync
 ├── words.js          # Vocabulary + subject/group metadata (generated)
-└── build-words.mjs   # Vocabulary build script (Node.js ESM: dedupe, sort, count)
+└── build.mjs         # Vocabulary build script (Node.js ESM: dedupe, sort, count)
 ```
 
 ### Term format
@@ -115,7 +115,7 @@ medical-vocab/
 ### Rebuilding the deck
 
 ```bash
-node build-words.mjs
+node build.mjs
 ```
 
 ## Tech
