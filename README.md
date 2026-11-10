@@ -16,6 +16,11 @@
 
 **[✨ 在线演示](https://erdd-chen.github.io/Medlexicon/) · [📖 功能](#功能特性) · [🚀 快速开始](#快速开始) · [📊 词库覆盖](#词库覆盖)**
 
+---
+
+<img src="docs/card-front.png" width="45%" alt="学习卡片 · 正面：英文与音标">
+<img src="docs/card-back.png" width="45%" alt="学习卡片 · 背面：中文释义与词根">
+
 </div>
 
 ---
@@ -43,6 +48,22 @@
 | 📈 **统计** | 词库总量、已接触、已掌握、今日待复习、连续天数、累计正确率，各学科进度条 |
 | 🔗 **同步** | BroadcastChannel + storage 事件双通路，按时间戳智能合并 |
 | 💾 **持久化** | localStorage 本地存储，数据不离开本机 |
+
+---
+
+## 界面预览
+
+**学习设置 · 按学科与细分小组自由组合学习范围**
+
+<img src="docs/home.png" width="100%" alt="学习设置页">
+
+**词库 · 3898 词全量检索与进度标记**
+
+<img src="docs/library.png" width="100%" alt="词库页">
+
+**统计 · 各学科掌握度与近 7 天复习量**
+
+<img src="docs/stats.png" width="100%" alt="统计页">
 
 ---
 
