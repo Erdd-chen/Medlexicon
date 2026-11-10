@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MediLexicon · 医学英语记忆</title>
+<link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-4.4-7-10a4.5 4.5 0 0 1 7-3.7A4.5 4.5 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg>
+    </div>
+    <div class="brand-text">
+      <h1>MediLexicon</h1>
+      <span>医学英语记忆</span>
+    </div>
+  </div>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab is-active" data-view="study">学习</button>
+    <button class="tab" data-view="library">词库</button>
+    <button class="tab" data-view="quiz">测验</button>
+    <button class="tab" data-view="stats">统计</button>
+  </nav>
+
+  <div class="streak" id="streakBadge">连续学习 0 天</div>
+</header>
+
+<main>
+  <!-- ============ 学习 ============ -->
+  <section class="view is-active" id="view-study">
+    <div class="study-wrap">
+      <div class="panel setup-card" id="studySetupPanel">
+        <div class="setup-head">
+          <div>
+            <h2>今日学习</h2>
+            <p class="sub">按记忆曲线排程 · 答错的词本轮稍后再出现</p>
+          </div>
+          <div class="mini-row">
+            <div class="mini"><b id="statDue">0</b><span>待复习</span></div>
+            <div class="mini"><b id="statNew">0</b><span>新词</span></div>
+            <div class="mini"><b id="statMastered">0</b><span>已掌握</span></div>
+          </div>
+        </div>
+
+        <div class="setup-grid">
+          <div class="field full">
+            <label>学习范围</label>
+            <div class="chips" id="catChips"></div>
+          </div>
+
+          <div class="field full">
+            <div class="field-line">
+              <label>学习分组 <span class="muted">新词按分组顺序学，复习随机穿插</span></label>
+              <div class="mini-actions">
+                <button class="ghost-btn" id="btnGroupAll">全选</button>
+                <button class="ghost-btn" id="btnGroupNone">清空</button>
+              </div>
+            </div>
+            <div class="group-list" id="groupChips"></div>
+          </div>
+
+          <div class="field">
+            <label>卡片方向</label>
+            <div class="seg" id="dirSeg">
+              <button data-dir="en2zh">英 → 中</button>
+              <button data-dir="zh2en">中 → 英</button>
+              <button data-dir="listen">听音</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>每日新词上限 <b id="newLimitVal">20</b></label>
+            <input type="range" id="newLimitRange" min="5" max="60" step="5" value="20">
+          </div>
+        </div>
+
+        <button class="btn primary wide big" id="btnStartStudy">开始学习</button>
+        <p class="hint center">空格 / 回车显示答案 · 1 不认识 · 2 模糊 · 3 认识</p>
+      </div>
+
+      <div class="session" id="studySession" hidden></div>
+    </div>
+  </section>
+
+  <!-- ============ 词库 ============ -->
+  <section class="view" id="view-library">
+    <div class="lib-toolbar panel">
+      <input id="libSearch" type="search" placeholder="搜索英文 / 中文 / 词根…" autocomplete="off">
+      <select id="libCat"></select>
+      <select id="libStatus">
+        <option value="all">全部状态</option>
+        <option value="new">未学</option>
+        <option value="learning">学习中</option>
+        <option value="mastered">已掌握</option>
+        <option value="due">今日待复习</option>
+      </select>
+      <span class="lib-count" id="libCount"></span>
+    </div>
+    <div class="lib-list" id="libList"></div>
+  </section>
+
+  <!-- ============ 测验 ============ -->
+  <section class="view" id="view-quiz">
+    <aside class="panel setup">
+      <h2>自测</h2>
+      <div class="field">
+        <label>题型</label>
+        <div class="chips" id="quizTypeChips"></div>
+      </div>
+      <div class="field">
+        <label>题量 <b id="quizCountVal">10</b></label>
+        <input type="range" id="quizCountRange" min="5" max="30" step="5" value="10">
+      </div>
+      <button class="btn primary wide" id="btnStartQuiz">开始测验</button>
+      <p class="hint">优先抽测已学过的词；答错会立刻回到复习队列。</p>
+    </aside>
+
+    <div class="stage" id="quizStage"></div>
+  </section>
+
+  <!-- ============ 统计 ============ -->
+  <section class="view" id="view-stats">
+    <div class="stat-grid" id="statGrid"></div>
+
+    <div class="panel">
+      <h2>各学科掌握度</h2>
+      <div class="cat-bars" id="catBars"></div>
+    </div>
+
+    <div class="panel">
+      <h2>近 7 天复习量</h2>
+      <div class="week-bars" id="weekBars"></div>
+    </div>
+
+    <div class="panel">
+      <h2>数据管理</h2>
+      <p class="hint">学习进度保存在本机浏览器中。换设备时可先导出，再导入。</p>
+      <div class="data-actions">
+        <button class="btn" id="btnExport">导出进度</button>
+        <label class="btn" for="importFile">导入进度</label>
+        <input type="file" id="importFile" accept="application/json" hidden>
+        <button class="btn danger" id="btnReset">重置全部进度</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="words.js?v=7"></script>
+  <script src="app.js?v=7"></script>
+</body>
+</html>
