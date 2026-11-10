@@ -2,169 +2,151 @@
 
 # 🎓 MedLexicon
 
-**医学英语词汇记忆 · 3898 词 · 12 学科 · 211 细分小组**
+**Medical English vocabulary flashcards — 3,898 terms · 12 subjects · 211 subgroups**
 
-基于 **SM-2 间隔重复算法** 的医学英语单词记忆工具。专为医学生与临床备考（USMLE / LMCHK）设计。
+A zero-dependency, offline-first web app for learning medical English, built on the SM-2 spaced repetition algorithm.
+
+[English](README.md) · [简体中文](README.zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Static Badge](https://img.shields.io/badge/words-3898-teal)]()
-[![Static Badge](https://img.shields.io/badge/disciplines-12-teal)]()
-[![Static Badge](https://img.shields.io/badge/groups-211-teal)]()
-[![Static Badge](https://img.shields.io/badge/build-zero--dependency-brightgreen)]()
+[![Words](https://img.shields.io/badge/words-3%2C898-teal)]()
+[![Subjects](https://img.shields.io/badge/subjects-12-teal)]()
+[![Subgroups](https://img.shields.io/badge/subgroups-211-teal)]()
+[![No build](https://img.shields.io/badge/build-none-brightgreen)]()
+
+[**Live demo**](https://erdd-chen.github.io/Medlexicon/) · [Features](#features) · [Quick start](#quick-start) · [Vocabulary](#vocabulary)
 
 ---
 
-**[✨ 在线演示](https://erdd-chen.github.io/Medlexicon/) · [📖 功能](#功能特性) · [🚀 快速开始](#快速开始) · [📊 词库覆盖](#词库覆盖)**
-
----
-
-<img src="docs/card-front.png" width="45%" alt="学习卡片 · 正面：英文与音标">
-<img src="docs/card-back.png" width="45%" alt="学习卡片 · 背面：中文释义与词根">
+<img src="docs/card-front.png" width="45%" alt="Flashcard front: term and IPA">
+<img src="docs/card-back.png" width="45%" alt="Flashcard back: meaning and etymology">
 
 </div>
 
----
+> **Note:** the interface is currently in Chinese, and every entry pairs an English term with a Chinese gloss. The app is aimed at Chinese-speaking medical students preparing for exams such as USMLE or LMCHK. An English-only gloss mode is on the roadmap.
 
-## 为什么需要 MedLexicon
+## Why this exists
 
-- 📚 **医学专用**：3898 条词条按 USMLE Step 1/2 与 LMCHK 高频考点整理，覆盖解剖、生理、病理、药理、临床等全学科，而非通用英语词汇
-- 🧠 **科学记忆**：基于 SM-2 间隔重复算法，自动调度复习时机，记得牢、忘得慢
-- 🗂️ **精细分组**：12 个学科 → 211 个细分小组（如「药理学 → 抗结核药」「病理学 → 骨肿瘤」），按需定向学习
-- 📝 **词根拆解**：每条词条附带音标、中文释义与词根/记忆点，理解构词逻辑
-- 🔄 **跨标签同步**：多标签页打开也能实时同步学习进度
-- 📴 **零依赖离线可用**：纯静态 HTML/CSS/JS，无需安装、无需后端，双击即用
+Most flashcard decks for medicine are either huge and unsorted, or built for a general English learner. This one is scoped:
 
----
+- **Medical-specific.** 3,898 terms compiled around high-yield topics in USMLE Step 1/2 and LMCHK, covering anatomy, physiology, pathology, pharmacology, clinical medicine and more.
+- **Narrow subgroups.** 12 subjects are split into 211 subgroups, so you can drill something like *antitubercular drugs* or *bone tumors* instead of an entire discipline.
+- **Etymology on the back.** Every card carries IPA, a Chinese gloss, and a short word-root note (e.g. `adrenal` = `ad-` near + `renal` kidney).
+- **Scheduling that works.** SM-2 with a three-button grade, so reviews land when you are about to forget.
+- **No account, no server.** Static files, `localStorage` persistence, opens straight from disk.
 
-## 功能特性
+## Features
 
-| 模块 | 说明 |
-|------|------|
-| 🧪 **学习** | SM-2 调度，按学科/小组选择范围，新词成组学习、复习随机打乱 |
-| 🔄 **卡片** | 原生 3D 翻转，点击查看释义与词根；空格/回车翻面；Web Speech API 朗读 |
-| ⭐ **评分** | 不认识 / 模糊 / 认识 三档反馈，驱动 ef、间隔与到期时间计算 |
-| 🔍 **词库** | 全量检索、按学科与小组筛选、查看单词详情与学习进度 |
-| ❓ **测验** | 英译中 / 中译英 / 拼写 三种题型，检验记忆效果 |
-| 📈 **统计** | 词库总量、已接触、已掌握、今日待复习、连续天数、累计正确率，各学科进度条 |
-| 🔗 **同步** | BroadcastChannel + storage 事件双通路，按时间戳智能合并 |
-| 💾 **持久化** | localStorage 本地存储，数据不离开本机 |
+| Area | What it does |
+|------|--------------|
+| **Study** | SM-2 scheduling; scope a session by subject or subgroup; new terms in order, reviews shuffled |
+| **Cards** | Native 3D flip, click or Space/Enter to reveal; Web Speech API pronunciation |
+| **Grading** | Again / Hard / Good — drives ease factor, interval and due date |
+| **Library** | Full-text search, filter by subject and subgroup, per-term progress |
+| **Quiz** | Term→meaning, meaning→term, and spelling modes |
+| **Stats** | Totals, terms seen, terms mastered, due today, streak, accuracy, per-subject progress |
+| **Sync** | `BroadcastChannel` + `storage` events, merged by timestamp across tabs |
+| **Storage** | Everything stays in `localStorage`; nothing leaves the browser |
 
----
+## Screenshots
 
-## 界面预览
+**Study setup — pick subjects and subgroups**
 
-**学习设置 · 按学科与细分小组自由组合学习范围**
+<img src="docs/home.png" width="100%" alt="Study setup screen">
 
-<img src="docs/home.png" width="100%" alt="学习设置页">
+**Library — search across all 3,898 terms**
 
-**词库 · 3898 词全量检索与进度标记**
+<img src="docs/library.png" width="100%" alt="Library screen">
 
-<img src="docs/library.png" width="100%" alt="词库页">
+**Stats — mastery by subject**
 
-**统计 · 各学科掌握度与近 7 天复习量**
+<img src="docs/stats.png" width="100%" alt="Stats screen">
 
-<img src="docs/stats.png" width="100%" alt="统计页">
+## Quick start
 
----
-
-## 快速开始
-
-### 方式一：直接打开
+Open the file directly:
 
 ```bash
-# 克隆或下载后直接用浏览器打开
+git clone https://github.com/Erdd-chen/Medlexicon.git
+cd Medlexicon
 open index.html
 ```
 
-### 方式二：本地静态服务器（推荐）
+Or serve it locally (recommended, so the speech API and sync behave normally):
 
 ```bash
 python3 -m http.server 8765
-# 浏览器访问 http://localhost:8765
+# then visit http://localhost:8765
 ```
 
-无需安装任何依赖，无需构建步骤。
+No install, no build step, no dependencies.
 
----
+## Vocabulary
 
-## 词库覆盖
+| Subject | Terms | Subject | Terms |
+|---------|-------|---------|-------|
+| Anatomy | 503 | Genetics | 143 |
+| Physiology | 344 | Clinical | 841 |
+| Histology | 186 | Microbiology | 228 |
+| Cell biology | 239 | Embryology | 119 |
+| Biochemistry | 268 | Immunology | 190 |
+| Pathology | 406 | Pharmacology | 431 |
 
-| 学科 | 词数 | 学科 | 词数 |
-|------|------|------|------|
-| 🦴 解剖学 | 503 | 🧬 遗传学 | 143 |
-| ⚙️ 生理学 | 344 | 🏥 临床术语 | 841 |
-| 🔬 组织学 | 186 | 🦠 微生物学 | 228 |
-| 🧫 细胞生物学 | 239 | 🌱 胚胎学 | 119 |
-| ⚗️ 生物化学 | 268 | 🛡️ 免疫学 | 190 |
-| 🩺 病理学 | 406 | 💊 药理学 | 431 |
+**3,898 terms · 211 subgroups.** The deck is still growing — contributions are welcome.
 
-**总计：3898 条词条 · 211 个细分小组**
-
-> 词库持续扩充中，欢迎通过 Issue / PR 贡献词条。
-
----
-
-## 项目结构
+## Project structure
 
 ```
 medical-vocab/
-├── index.html        # 页面结构与视图容器
-├── styles.css        # 全部样式（CSS 变量主题、响应式）
-├── app.js            # 应用逻辑（SM-2 调度、测验、统计、跨标签同步）
-├── words.js          # 词库数据 + 学科/分组元数据（构建产物）
-└── build-words.mjs   # 词库生成脚本（Node.js ESM，去重/排序/统计）
+├── index.html        # Markup and view containers
+├── styles.css        # All styling (CSS variables, responsive)
+├── app.js            # App logic: SM-2, quiz, stats, cross-tab sync
+├── words.js          # Vocabulary + subject/group metadata (generated)
+└── build-words.mjs   # Vocabulary build script (Node.js ESM: dedupe, sort, count)
 ```
 
-### 词库数据格式
+### Term format
 
 ```js
-// [英文, 音标, 中文释义, 学科键, 分组键, 词根/记忆点]
-["acetylcholine", "/ˌæsɪtlˈkoʊliːn/", "乙酰胆碱", "physiology", "neuro", "乙酰基 + 胆碱"]
+// [term, IPA, gloss, subject, subgroup, etymology note]
+["acetylcholine", "/ˌæsɪtlˈkoʊliːn/", "乙酰胆碱", "physiology", "neuro", "acetyl + choline"]
 ```
 
-### 重新生成词库
+### Rebuilding the deck
 
 ```bash
 node build-words.mjs
 ```
 
----
+## Tech
 
-## 技术栈
+Plain HTML5, CSS3 and ES5-era JavaScript. No framework, no bundler, no runtime dependency.
 
-- **前端**：原生 HTML5 + CSS3（CSS Variables）+ 原生 JavaScript（IIFE）
-- **记忆算法**：SM-2 变体（0/1/2 三档评分）
-- **持久化**：localStorage
-- **跨标签同步**：BroadcastChannel + StorageEvent
-- **语音**：Web Speech API（SpeechSynthesis）
+- Scheduling — SM-2 variant with three grades
+- Persistence — `localStorage`
+- Cross-tab sync — `BroadcastChannel` and `StorageEvent`
+- Speech — Web Speech API
 
----
+## Roadmap
 
-## 路线图
+- [ ] Grow the deck toward 5,000 terms
+- [ ] Frequency and difficulty tiers
+- [ ] Progress charts
+- [ ] PWA / installable offline app
+- [ ] Import custom word lists
+- [ ] Dark theme
+- [ ] English-only gloss mode
 
-- [ ] 更多学科词条扩充（目标 5000+）
-- [ ] 词频与难度分级
-- [ ] 学习数据可视化图表
-- [ ] PWA 离线安装
-- [ ] 自定义词表导入
-- [ ] 暗色主题
+## Data and disclaimer
 
----
+- Entries were compiled from standard medical textbooks and common terminology; no copyrighted word list or dictionary data was copied.
+- IPA transcriptions follow the International Phonetic Alphabet; the Chinese glosses and etymology notes were written for this project.
+- SM-2 is a public algorithm; the implementation here is original.
+- Intended for study and teaching only. **Not medical advice.**
 
-## 数据来源与声明
+## Contributing
 
-- 词条依据公开医学教材与通用术语常识整理，**未复制任何受版权保护的词表或词典数据**
-- 音标采用国际音标（IPA），中文释义与词根拆解为项目自行撰写
-- SM-2 为公开的间隔重复算法，本项目为独立实现
-- 本项目仅用于学习与教学，**不构成医疗建议**
-
----
-
-## 贡献
-
-欢迎贡献词条、修复 bug 或新增功能。请先阅读数据格式，再提交 Pull Request。
-
----
+Bug reports, new terms and feature ideas are all welcome. Please check the term format above before opening a pull request.
 
 ## License
 
