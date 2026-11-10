@@ -44,7 +44,7 @@ Most flashcard decks for medicine are either huge and unsorted, or built for a g
 | **Grading** | Again / Hard / Good — drives ease factor, interval and due date |
 | **Library** | Full-text search, filter by subject / status / leech, incremental rendering, per-term progress |
 | **Quiz** | Term→meaning, meaning→term, spelling and listening modes; keyboard 1–4 to answer, Enter for next |
-| **Stats** | Totals, terms seen, mastered, due today, leech count, streak, accuracy, per-subject progress |
+| **Stats** | Totals, terms seen, mastered, due today, leech count, streak, accuracy, per-subject progress, 7-day bars, 30-day heatmap |
 | **Theme** | Light and dark, remembered per browser, synced across tabs |
 | **Offline** | Installable PWA with a service worker; the deck works with no network |
 | **Sync** | `BroadcastChannel` + `storage` events, merged by timestamp across tabs |
@@ -60,7 +60,7 @@ Most flashcard decks for medicine are either huge and unsorted, or built for a g
 
 <img src="docs/library.png" width="100%" alt="Library screen">
 
-**Stats — mastery by subject**
+**Stats — progress by subject, 7-day activity, 30-day heatmap**
 
 <img src="docs/stats.png" width="100%" alt="Stats screen">
 
@@ -146,7 +146,7 @@ Plain HTML5, CSS3 and ES5-era JavaScript. No framework, no bundler, no runtime d
 - [ ] Frequency and difficulty tiers
 - [ ] Import custom word lists
 - [ ] English-only gloss mode
-- [ ] Long-term activity heatmap
+- [ ] Yearly activity heatmap
 
 ## Data and disclaimer
 

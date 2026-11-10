@@ -848,20 +848,19 @@
     const acc = state.totals.reviews ? Math.round((state.totals.correct / state.totals.reviews) * 100) : 0;
 
     $('#statGrid').innerHTML = [
-      ['词库总量', total],
-      ['已接触', seen],
-      ['已掌握', mastered],
-      ['今日待复习', due],
-      ['难词', leech],
-      ['连续学习', streak() + ' 天'],
-      ['累计正确率', acc + '%']
-    ].map(([k, v]) => `<div class="stat-card"><span>${k}</span><b>${v}</b></div>`).join('');
+      ['词库总量', total, ''],
+      ['已接触', seen, ''],
+      ['已掌握', mastered, 'mastered'],
+      ['今日待复习', due, 'due'],
+      ['难词', leech, 'leech'],
+      ['连续学习', streak() + ' 天', ''],
+      ['累计正确率', acc + '%', '']
+    ].map(([k, v, jump]) => `<div class="stat-card${jump ? ' is-link' : ''}"${jump ? ` data-jump="${jump}"` : ''}><span>${k}</span><b>${v}</b></div>`).join('');
 
     $('#catBars').innerHTML = CAT_KEYS.map(k => {
       const words = WORDS.filter(w => w.cat === k);
       const learned = words.filter(w => !isNew(w.en)).length;
-      const mast = words.filter(w => statusOf(w.en) === 'mastered').length;
-      const pct = words.length ? Math.round((mast / words.length) * 100) : 0;
+      const pct = words.length ? Math.round((learned / words.length) * 100) : 0;
       return `<div class="cat-bar">
         <span class="name">${CATEGORIES[k]}</span>
         <div class="track"><i style="width:${pct}%"></i></div>
@@ -1031,6 +1030,16 @@
       return;
     }
 
+    const jump = e.target.closest('[data-jump]');
+    if (jump) {
+      $('#libStatus').value = jump.dataset.jump;
+      $('#libCat').value = 'all';
+      $('#libSearch').value = '';
+      libLimit = 200;
+      switchView('library');
+      return;
+    }
+
     if (e.target.closest('#btnExport')) { exportData(); return; }
 
     if (e.target.closest('#libMore')) { libLimit += 300; renderLibrary(); return; }
@@ -1084,6 +1093,13 @@
         const idx = ['1', '2', '3', '4'].indexOf(e.key);
         if (idx >= 0 && idx < q.options.length) answerOption(idx);
       }
+      return;
+    }
+
+    if (e.key === '/') {
+      e.preventDefault();
+      switchView('library');
+      $('#libSearch').focus();
       return;
     }
 
