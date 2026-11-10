@@ -62,6 +62,20 @@
 
   let state = load();
 
+  /* ================= 主题 ================= */
+  const THEME_KEY = 'medlexicon.theme';
+
+  function currentTheme() {
+    return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+  }
+  function setTheme(t) {
+    document.documentElement.dataset.theme = t;
+    try { localStorage.setItem(THEME_KEY, t); } catch (e) { /* 忽略隐私模式限制 */ }
+  }
+  function toggleTheme() {
+    setTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+  }
+
   /* ================= 跨标签页同步 ================= */
   const SYNC_CHANNEL = 'medlexicon-sync';
   const SESSION_ID = Math.random().toString(36).slice(2);
@@ -119,6 +133,10 @@
   }
   if (bc) bc.onmessage = onExternalSync;
   window.addEventListener('storage', (e) => {
+    if (e.key === THEME_KEY && e.newValue) {
+      document.documentElement.dataset.theme = e.newValue;
+      return;
+    }
     if (e.key === KEY && e.newValue) {
       try { onExternalSync({ data: JSON.parse(e.newValue) }); } catch (err) { /* ignore */ }
     }
@@ -167,6 +185,12 @@
   function isDueToday(en) {
     const p = rec(en);
     return !!(p && p.seen && p.due <= todayStr());
+  }
+  /* 难词：答错次数达到阈值，说明这个词反复记不住 */
+  const LEECH_LAPSES = 2;
+  function isLeech(en) {
+    const p = rec(en);
+    return !!(p && p.seen && (p.lapses || 0) >= LEECH_LAPSES);
   }
 
   function bump(key, v) {
@@ -753,6 +777,8 @@
   }
 
   /* ================= 词库 ================= */
+  let libLimit = 200; // 首屏只渲染前若干条，避免 3898 行同时进 DOM
+
   function renderLibrary() {
     const q = $('#libSearch').value.trim().toLowerCase();
     const cat = $('#libCat').value;
@@ -761,7 +787,8 @@
     const list = WORDS.filter(w => {
       if (cat !== 'all' && w.cat !== cat) return false;
       if (st === 'due' && !isDueToday(w.en)) return false;
-      if (st !== 'all' && st !== 'due' && statusOf(w.en) !== st) return false;
+      if (st === 'leech' && !isLeech(w.en)) return false;
+      if (st !== 'all' && st !== 'due' && st !== 'leech' && statusOf(w.en) !== st) return false;
       if (q) {
         const hay = (w.en + ' ' + w.zh + ' ' + w.note + ' ' + groupLabel(w) + ' ' + CATEGORIES[w.cat]).toLowerCase();
         if (!hay.includes(q)) return false;
@@ -776,12 +803,14 @@
       return;
     }
 
+    const shown = list.slice(0, libLimit);
+    const rest = list.length - shown.length;
     const stText = { new: '未学', learning: '学习中', mastered: '已掌握' };
-    $('#libList').innerHTML = list.map(w => {
+    $('#libList').innerHTML = shown.map(w => {
       const p = rec(w.en);
       const stKey = statusOf(w.en);
       const meta = p && p.seen
-        ? `复习 ${p.reps} 次 · 间隔 ${p.interval} 天 · 下次 ${p.due <= todayStr() ? '今天' : p.due}`
+        ? `复习 ${p.reps} 次 · 间隔 ${p.interval} 天 · 下次 ${p.due <= todayStr() ? '今天' : p.due}` + (p.lapses ? ` · 遗忘 ${p.lapses} 次` : '')
         : '尚未学习';
       return `<div class="lib-row" data-en="${esc(w.en)}">
         <div class="lib-top">
@@ -804,7 +833,9 @@
           </div>
         </div>
       </div>`;
-    }).join('');
+    }).join('') + (rest > 0
+      ? `<button class="btn wide lib-more" id="libMore">显示更多（剩余 ${rest} 词）</button>`
+      : '');
   }
 
   /* ================= 统计 ================= */
@@ -813,6 +844,7 @@
     const seen = WORDS.filter(w => !isNew(w.en)).length;
     const mastered = WORDS.filter(w => statusOf(w.en) === 'mastered').length;
     const due = WORDS.filter(w => isDueToday(w.en)).length;
+    const leech = WORDS.filter(w => isLeech(w.en)).length;
     const acc = state.totals.reviews ? Math.round((state.totals.correct / state.totals.reviews) * 100) : 0;
 
     $('#statGrid').innerHTML = [
@@ -820,6 +852,7 @@
       ['已接触', seen],
       ['已掌握', mastered],
       ['今日待复习', due],
+      ['难词', leech],
       ['连续学习', streak() + ' 天'],
       ['累计正确率', acc + '%']
     ].map(([k, v]) => `<div class="stat-card"><span>${k}</span><b>${v}</b></div>`).join('');
@@ -850,11 +883,24 @@
         <div class="bar ${x.v ? '' : 'zero'}" style="height:${x.v ? Math.max(8, (x.v / max) * 110) : 4}px"></div>
         <span class="day">${x.label}</span>
       </div>`).join('');
+
+    /* 最近 30 天热力图 */
+    const heat = [];
+    for (let i = 29; i >= 0; i--) {
+      const d = addDays(todayStr(), -i);
+      const day = state.days[d] || {};
+      const n = (day.reviews || 0) + (day.quiz || 0);
+      const lvl = n === 0 ? 0 : n < 5 ? 1 : n < 15 ? 2 : n < 30 ? 3 : 4;
+      heat.push(`<i class="heat-cell l${lvl}" title="${d} · 复习 ${day.reviews || 0} · 测验 ${day.quiz || 0}"></i>`);
+    }
+    $('#heatMap').innerHTML = heat.join('');
   }
 
   /* ================= 视图切换 ================= */
   let currentView = 'study';
-  function switchView(name) {
+  const VIEWS = ['study', 'library', 'quiz', 'stats'];
+
+  function switchView(name, fromHash) {
     currentView = name;
     $$('.tab').forEach(t => t.classList.toggle('is-active', t.dataset.view === name));
     $$('.view').forEach(v => v.classList.toggle('is-active', v.id === 'view-' + name));
@@ -862,6 +908,15 @@
     if (name === 'stats') renderStats();
     if (name === 'study') { renderStudyStage(); renderSetup(); }
     if (name === 'quiz' && !quiz) $('#quizStage').innerHTML = quizEmpty();
+    if (!fromHash) {
+      try { history.replaceState(null, '', '#' + name); } catch (e) { /* file:// 下可能不支持 */ }
+    }
+  }
+
+  /* 支持 /#library 这类直达链接，方便分享某个视图 */
+  function viewFromHash() {
+    const h = (location.hash || '').replace('#', '');
+    return VIEWS.includes(h) ? h : '';
   }
 
   /* ================= 事件 ================= */
@@ -894,6 +949,8 @@
 
     const tab = e.target.closest('.tab');
     if (tab) { switchView(tab.dataset.view); return; }
+
+    if (e.target.closest('#btnTheme')) { toggleTheme(); return; }
 
     const catChip = e.target.closest('[data-cat]');
     if (catChip) {
@@ -975,6 +1032,8 @@
     }
 
     if (e.target.closest('#btnExport')) { exportData(); return; }
+
+    if (e.target.closest('#libMore')) { libLimit += 300; renderLibrary(); return; }
     if (e.target.closest('#btnReset')) {
       if (confirm('确定要清空全部学习进度吗？此操作不可撤销。')) {
         state = defaultState();
@@ -1003,16 +1062,31 @@
       $('#quizCountVal').textContent = e.target.value;
       save();
     }
-    if (e.target.id === 'libSearch') renderLibrary();
+    if (e.target.id === 'libSearch') { libLimit = 200; renderLibrary(); }
   });
 
   document.addEventListener('change', e => {
-    if (e.target.id === 'libCat' || e.target.id === 'libStatus') renderLibrary();
+    if (e.target.id === 'libCat' || e.target.id === 'libStatus') { libLimit = 200; renderLibrary(); }
     if (e.target.id === 'importFile') importData(e.target.files[0]);
   });
 
   document.addEventListener('keydown', e => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+    if (currentView === 'quiz') {
+      if (!quiz) return;
+      if (quiz.answered) {
+        if (e.code === 'Enter' || e.code === 'Space') { e.preventDefault(); nextQuestion(); }
+        return;
+      }
+      const q = quiz.qs[quiz.i];
+      if (q && q.options) {
+        const idx = ['1', '2', '3', '4'].indexOf(e.key);
+        if (idx >= 0 && idx < q.options.length) answerOption(idx);
+      }
+      return;
+    }
+
     if (currentView !== 'study' || !study) return;
     if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); reveal(); return; }
     if (!study.revealed) return;
@@ -1054,6 +1128,13 @@
     reader.readAsText(file);
   }
 
+  /* ================= 离线缓存 ================= */
+  function registerServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+    if (!/^https?:$/.test(location.protocol)) return; // file:// 直接打开时不注册
+    navigator.serviceWorker.register('sw.js').catch(() => { /* 注册失败不影响正常使用 */ });
+  }
+
   /* ================= 启动 ================= */
   function init() {
     const catSel = $('#libCat');
@@ -1065,6 +1146,15 @@
     renderHeader();
     renderStudyStage();
     $('#quizStage').innerHTML = quizEmpty();
+
+    const hv = viewFromHash();
+    if (hv) switchView(hv, true);
+    window.addEventListener('hashchange', () => {
+      const v = viewFromHash();
+      if (v && v !== currentView) switchView(v, true);
+    });
+
+    registerServiceWorker();
     save();
   }
 

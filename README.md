@@ -42,11 +42,13 @@ Most flashcard decks for medicine are either huge and unsorted, or built for a g
 | **Study** | SM-2 scheduling; scope a session by subject or subgroup; new terms in order, reviews shuffled |
 | **Cards** | Native 3D flip, click or Space/Enter to reveal; Web Speech API pronunciation |
 | **Grading** | Again / Hard / Good — drives ease factor, interval and due date |
-| **Library** | Full-text search, filter by subject and subgroup, per-term progress |
-| **Quiz** | Term→meaning, meaning→term, and spelling modes |
-| **Stats** | Totals, terms seen, terms mastered, due today, streak, accuracy, per-subject progress |
+| **Library** | Full-text search, filter by subject / status / leech, incremental rendering, per-term progress |
+| **Quiz** | Term→meaning, meaning→term, spelling and listening modes; keyboard 1–4 to answer, Enter for next |
+| **Stats** | Totals, terms seen, mastered, due today, leech count, streak, accuracy, per-subject progress |
+| **Theme** | Light and dark, remembered per browser, synced across tabs |
+| **Offline** | Installable PWA with a service worker; the deck works with no network |
 | **Sync** | `BroadcastChannel` + `storage` events, merged by timestamp across tabs |
-| **Storage** | Everything stays in `localStorage`; nothing leaves the browser |
+| **Storage** | Everything stays in `localStorage`; export/import JSON for backup |
 
 ## Screenshots
 
@@ -61,6 +63,10 @@ Most flashcard decks for medicine are either huge and unsorted, or built for a g
 **Stats — mastery by subject**
 
 <img src="docs/stats.png" width="100%" alt="Stats screen">
+
+**Dark theme**
+
+<img src="docs/dark.png" width="100%" alt="Dark theme">
 
 ## Quick start
 
@@ -99,10 +105,13 @@ No install, no build step, no dependencies.
 ```
 med-vocab/
 ├── index.html        # Markup and view containers
-├── styles.css        # All styling (CSS variables, responsive)
-├── app.js            # App logic: SM-2, quiz, stats, cross-tab sync
+├── styles.css        # All styling (light/dark tokens, responsive)
+├── app.js            # App logic: SM-2, quiz, stats, theme, cross-tab sync
 ├── words.js          # Vocabulary + subject/group metadata (generated)
-└── build.mjs         # Vocabulary build script (Node.js ESM: dedupe, sort, count)
+├── build.mjs         # Vocabulary build script (Node.js ESM: dedupe, sort, count)
+├── manifest.webmanifest
+├── sw.js             # Service worker: offline cache
+└── icons/            # App icons (192 / 512)
 ```
 
 ### Term format
@@ -126,16 +135,18 @@ Plain HTML5, CSS3 and ES5-era JavaScript. No framework, no bundler, no runtime d
 - Persistence — `localStorage`
 - Cross-tab sync — `BroadcastChannel` and `StorageEvent`
 - Speech — Web Speech API
+- Theming — CSS custom properties, `prefers-color-scheme` aware
+- Offline — service worker with precached core assets
 
 ## Roadmap
 
 - [ ] Grow the deck toward 5,000 terms
+- [x] Dark theme
+- [x] Installable PWA with offline cache
 - [ ] Frequency and difficulty tiers
-- [ ] Progress charts
-- [ ] PWA / installable offline app
 - [ ] Import custom word lists
-- [ ] Dark theme
 - [ ] English-only gloss mode
+- [ ] Long-term activity heatmap
 
 ## Data and disclaimer
 
