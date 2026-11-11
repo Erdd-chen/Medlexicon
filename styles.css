@@ -402,9 +402,14 @@ input[type=search]:focus,select:focus,input[type=text]:focus{
 .lib-more{margin-top:4px; color:var(--ink-2)}
 .lib-more:hover{color:var(--brand)}
 
-/* 30 天热力图 */
-.heat{display:grid; grid-template-columns:repeat(15,minmax(0,1fr)); gap:6px; margin-top:2px; max-width:560px}
-.heat-cell{display:block; aspect-ratio:1/1; border-radius:5px; background:var(--track); border:1px solid transparent}
+/* 全年热力图 */
+.heat-year-wrap{overflow-x:auto; padding-bottom:6px}
+.heat-year{
+  display:grid; grid-template-rows:repeat(7,12px); grid-auto-flow:column;
+  grid-auto-columns:minmax(9px,1fr); gap:3px;
+}
+.heat-cell{display:block; width:100%; height:12px; border-radius:3px; background:var(--track)}
+.heat-cell.blank{background:transparent}
 .heat-cell.l1{background:#cdeae4}
 .heat-cell.l2{background:#8ed3c8}
 .heat-cell.l3{background:#35a99a}
@@ -413,7 +418,64 @@ html[data-theme="dark"] .heat-cell.l1{background:#14403a}
 html[data-theme="dark"] .heat-cell.l2{background:#1d6a5e}
 html[data-theme="dark"] .heat-cell.l3{background:#2a9e8d}
 html[data-theme="dark"] .heat-cell.l4{background:var(--brand)}
-@media (max-width:560px){ .heat{grid-template-columns:repeat(10,1fr)} }
+.heat-legend{display:flex; align-items:center; gap:4px; margin-top:10px; font-size:11px; color:var(--muted)}
+
+/* ---------------- 探索：词根 / 图解 ---------------- */
+.explore-head{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-bottom:18px}
+.explore-head .seg{flex:none; width:220px}
+.explore-head .hint{margin:0; flex:1; min-width:220px}
+
+.root-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px}
+.root-card{
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  padding:16px 18px; box-shadow:var(--shadow);
+}
+.root-head{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:11px}
+.root-label{font-family:var(--serif); font-size:17px; color:var(--brand); letter-spacing:.3px}
+.root-mean{font-size:12px; color:var(--ink-2); margin-left:8px}
+.root-count{font-size:11px; color:var(--muted); white-space:nowrap}
+.root-card .chips{gap:5px}
+.root-actions{display:flex; gap:8px; margin-top:13px}
+.btn.sm-primary{
+  background:var(--brand-soft); border-color:#a9d8d1; color:var(--brand);
+  font-weight:600; padding:7px 12px; font-size:12.5px; border-radius:9px;
+}
+.btn.sm-primary:hover{background:#dff2ee; color:var(--brand)}
+html[data-theme="dark"] .btn.sm-primary{background:#12312e; border-color:#1d4f48; color:var(--brand-2)}
+html[data-theme="dark"] .btn.sm-primary:hover{background:#17403a}
+.root-actions .btn:not(.sm-primary){padding:7px 12px; font-size:12.5px; border-radius:9px}
+
+.map-tabs{margin-bottom:14px}
+.map-body{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:18px; align-items:start}
+.map-canvas{padding:14px}
+.map-canvas svg{width:100%; height:auto; display:block}
+.map-frame path{fill:var(--surface-2); stroke:var(--line); stroke-width:1.5; rx:16}
+.map-title{font-size:11px; fill:var(--muted); font-family:var(--sans)}
+.organ{cursor:pointer}
+.organ rect,.organ ellipse,.organ circle,.organ path{
+  fill:var(--surface-2); stroke:#cfd9e2; stroke-width:1.5;
+  transition:.18s;
+}
+html[data-theme="dark"] .organ rect,html[data-theme="dark"] .organ ellipse,
+html[data-theme="dark"] .organ circle,html[data-theme="dark"] .organ path{stroke:#2b3d49}
+.organ-line{fill:none; stroke:var(--ink-2); stroke-width:1.8; stroke-linejoin:round}
+.organ.vessel path{fill:none; stroke:var(--brand); stroke-width:4.5; stroke-linecap:round}
+.organ .leader{fill:none; stroke:var(--muted); stroke-width:1; stroke-dasharray:3 3}
+.organ text{font-size:11.5px; fill:var(--ink-2); font-family:var(--sans); pointer-events:none}
+.organ:hover rect,.organ:hover ellipse,.organ:hover circle,.organ:hover path{fill:var(--brand-soft); stroke:#a9d8d1}
+.organ.vessel:hover path{fill:none; stroke:#a9d8d1; stroke-width:6}
+.organ.is-on rect,.organ.is-on ellipse,.organ.is-on circle,.organ.is-on path{fill:var(--brand); stroke:var(--brand)}
+.organ.vessel.is-on path{fill:none; stroke:var(--brand); stroke-width:7}
+.organ.is-on text{fill:#fff; font-weight:600}
+html[data-theme="dark"] .organ.is-on text{fill:#06251f}
+.map-side h2{font-family:var(--serif); font-size:18px; margin:0 0 8px}
+.map-words{display:flex; flex-wrap:wrap; gap:6px; margin-top:12px}
+.map-words .chip.sm i{font-style:normal; color:var(--muted); margin-left:6px; font-size:11px}
+.map-actions{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:16px; font-size:12px}
+@media (max-width:820px){
+  .map-body{grid-template-columns:1fr}
+  .root-grid{grid-template-columns:1fr}
+}
 
 /* 键盘可达性 */
 :focus-visible{outline:2px solid var(--brand); outline-offset:2px; border-radius:8px}

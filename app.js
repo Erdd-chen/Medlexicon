@@ -17,17 +17,52 @@
 
   const ICON_SPK = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>';
 
-  const WORDS = RAW_WORDS.map(([en, ipa, zh, cat, group, note]) => ({
-    en, ipa, zh, cat, group: group || '', note: note || ''
-  }));
-  const BY_EN = new Map(WORDS.map(w => [w.en, w]));
-  const CAT_KEYS = Object.keys(CATEGORIES);
+  const CUSTOM_CAT = 'custom';
+  const CUSTOM_LABEL = '自建词表';
+
+  let WORDS = [];
+  let BY_EN = new Map();
+  let CAT_KEYS = Object.keys(CATEGORIES);
 
   const groupKeyOf = w => w.cat + '.' + w.group;
   const groupLabel = w => (GROUPS[w.cat] || {})[w.group] || '';
   const allGroupKeys = () => CAT_KEYS.flatMap(c => Object.keys(GROUPS[c] || {}).map(g => c + '.' + g));
   const GROUP_COUNT = {};
-  WORDS.forEach(w => { const k = groupKeyOf(w); GROUP_COUNT[k] = (GROUP_COUNT[k] || 0) + 1; });
+
+  /* 内置词库 + 用户导入词表，合并成运行时词表 */
+  function rebuildWords() {
+    WORDS = RAW_WORDS.map(([en, ipa, zh, cat, group, note]) => ({
+      en, ipa, zh, cat, group: group || '', note: note || ''
+    }));
+
+    const custom = state.customWords || [];
+    if (custom.length) {
+      CATEGORIES[CUSTOM_CAT] = CUSTOM_LABEL;
+      GROUPS[CUSTOM_CAT] = {};
+      custom.forEach(w => {
+        if (!GROUPS[CUSTOM_CAT][w.group]) GROUPS[CUSTOM_CAT][w.group] = w.groupLabel || w.group;
+        WORDS.push({ en: w.en, ipa: w.ipa || '', zh: w.zh, cat: CUSTOM_CAT, group: w.group, note: w.note || '' });
+      });
+    } else {
+      delete CATEGORIES[CUSTOM_CAT];
+      delete GROUPS[CUSTOM_CAT];
+    }
+
+    BY_EN = new Map(WORDS.map(w => [w.en, w]));
+    CAT_KEYS = Object.keys(CATEGORIES);
+    Object.keys(GROUP_COUNT).forEach(k => { delete GROUP_COUNT[k]; });
+    WORDS.forEach(w => { const k = groupKeyOf(w); GROUP_COUNT[k] = (GROUP_COUNT[k] || 0) + 1; });
+
+    // 新增学科/分组自动并入学习范围
+    if (state && state.settings) {
+      const cats = new Set(state.settings.categories || []);
+      CAT_KEYS.forEach(k => cats.add(k));
+      state.settings.categories = Array.from(cats);
+      const gs = new Set(state.settings.groups || []);
+      allGroupKeys().forEach(k => gs.add(k));
+      state.settings.groups = Array.from(gs);
+    }
+  }
 
   /* ================= 日期 ================= */
   const pad = n => String(n).padStart(2, '0');
@@ -49,6 +84,7 @@
       progress: {},
       days: {},
       totals: { reviews: 0, correct: 0 },
+      customWords: [],
       settings: {
         categories: CAT_KEYS.slice(),
         groups: allGroupKeys(),
@@ -61,6 +97,7 @@
   }
 
   let state = load();
+  rebuildWords();
 
   /* ================= 主题 ================= */
   const THEME_KEY = 'medlexicon.theme';
@@ -160,6 +197,7 @@
         progress: s.progress || {},
         days: s.days || {},
         totals: Object.assign(base.totals, s.totals || {}),
+        customWords: Array.isArray(s.customWords) ? s.customWords : [],
         settings
       };
     } catch (e) {
@@ -373,6 +411,15 @@
     if (!queue.length) { toast('这个范围内今天没有需要学习的词了，可以换一组或调高每日新词'); return; }
 
     study = { queue, done: 0, revealed: false, grades: [0, 0, 0], undo: null };
+    renderStudyStage(state.settings.direction === 'listen');
+  }
+
+  /* 从词根族 / 图解区块直接开始一组学习 */
+  function startStudyWith(ens) {
+    const queue = shuffle(ens).slice(0, 60);
+    if (!queue.length) { toast('这一组还没有词条'); return; }
+    study = { queue, done: 0, revealed: false, grades: [0, 0, 0], undo: null };
+    switchView('study');
     renderStudyStage(state.settings.direction === 'listen');
   }
 
@@ -839,6 +886,247 @@
   }
 
   /* ================= 统计 ================= */
+  /* ================= 探索：词根 ================= */
+  /* 词根表：显示形式、匹配片段、含义。全部为通用希腊/拉丁词素，公共知识。 */
+  const ROOTS = [
+    ['cardi-', 'cardi', '心'], ['nephr-', 'nephr', '肾'], ['hepat-', 'hepat', '肝'],
+    ['gastr-', 'gastr', '胃'], ['enter-', 'enter', '肠'], ['pulmon-', 'pulmon', '肺'],
+    ['pneum-', 'pneum', '肺 / 气'], ['bronch-', 'bronch', '支气管'], ['trache-', 'trache', '气管'],
+    ['laryng-', 'laryng', '喉'], ['pharyng-', 'pharyng', '咽'], ['rhin-', 'rhin', '鼻'],
+    ['cyt-', 'cyt', '细胞'], ['hist-', 'hist', '组织'], ['derm-', 'derm', '皮肤'],
+    ['oste-', 'oste', '骨'], ['chondr-', 'chondr', '软骨'], ['myo-', 'myo', '肌'],
+    ['neur-', 'neur', '神经'], ['encephal-', 'encephal', '脑'], ['mening-', 'mening', '脑膜'],
+    ['myel-', 'myel', '脊髓 / 骨髓'], ['psych-', 'psych', '精神'], ['ophthalm-', 'ophthalm', '眼'],
+    ['retin-', 'retin', '视网膜'], ['odont-', 'odont', '牙'], ['stomat-', 'stomat', '口'],
+    ['gloss-', 'gloss', '舌'], ['thorac-', 'thorac', '胸'], ['lapar-', 'lapar', '腹'],
+    ['hyster-', 'hyster', '子宫'], ['oophor-', 'oophor', '卵巢'], ['prostat-', 'prostat', '前列腺'],
+    ['cyst-', 'cyst', '囊 / 膀胱'], ['urethr-', 'urethr', '尿道'], ['ureter-', 'ureter', '输尿管'],
+    ['pyel-', 'pyel', '肾盂'], ['angi-', 'angi', '血管'], ['phleb-', 'phleb', '静脉'],
+    ['arteri-', 'arteri', '动脉'], ['thromb-', 'thromb', '血栓'], ['hemat-', 'hemat', '血'],
+    ['leuk-', 'leuk', '白'], ['erythr-', 'erythr', '红'], ['lymph-', 'lymph', '淋巴'],
+    ['splen-', 'splen', '脾'], ['thym-', 'thym', '胸腺'], ['thyroid-', 'thyroid', '甲状腺'],
+    ['adren-', 'adren', '肾上腺'], ['pancreat-', 'pancreat', '胰'], ['glyc-', 'glyc', '糖'],
+    ['lip-', 'lip', '脂'], ['carcin-', 'carcin', '癌'], ['onc-', 'onc', '肿瘤'],
+    ['lith-', 'lith', '石'], ['scler-', 'scler', '硬'], ['-itis', 'itis', '炎症'],
+    ['-oma', 'oma', '肿块 / 肿瘤'], ['-ectomy', 'ectomy', '切除术'], ['-otomy', 'otomy', '切开术'],
+    ['-ostomy', 'ostomy', '造口术'], ['-plasty', 'plasty', '成形术'], ['-scopy', 'scopy', '内镜检查'],
+    ['-graphy', 'graphy', '造影 / 记录'], ['-pathy', 'pathy', '病变'], ['-plasia', 'plasia', '增生'],
+    ['-algia', 'algia', '疼痛'], ['-emia', 'emia', '血症'], ['-uria', 'uria', '尿'],
+    ['-pnea', 'pnea', '呼吸'], ['-phagia', 'phagia', '吞咽'], ['-megaly', 'megaly', '增大'],
+    ['-penia', 'penia', '减少'], ['-ptosis', 'ptosis', '下垂'], ['-rrhea', 'rrhea', '流出']
+  ];
+
+  function rootMembers(match) {
+    const q = match.toLowerCase();
+    /* 后缀词根按词尾匹配，避免 -oma 命中 stomach 这类假同源 */
+    const suffix = ROOTS.some(([label, m]) => m === match && label[0] === '-');
+    return WORDS.filter(w => {
+      const en = w.en.toLowerCase();
+      return suffix ? en.endsWith(q) : en.includes(q);
+    });
+  }
+
+  function renderRoots() {
+    const cards = [];
+    ROOTS.forEach(([label, match, meaning]) => {
+      const members = rootMembers(match);
+      if (members.length < 4) return;
+      const sample = members.slice(0, 6);
+      cards.push(`
+        <div class="root-card" data-root="${match}">
+          <div class="root-head">
+            <div>
+              <b class="root-label">${esc(label)}</b>
+              <span class="root-mean">${esc(meaning)}</span>
+            </div>
+            <span class="root-count">${members.length} 词</span>
+          </div>
+          <div class="chips">
+            ${sample.map(w => `<button class="chip sm" data-word="${esc(w.en)}">${esc(w.en)}</button>`).join('')}
+          </div>
+          <div class="root-actions">
+            <button class="btn sm-primary" data-study-root="${match}">学习这一族</button>
+            <button class="btn" data-list-root="${match}">在词库查看</button>
+          </div>
+        </div>`);
+    });
+    $('#exploreRoot').innerHTML = cards.length
+      ? `<div class="root-grid">${cards.join('')}</div>`
+      : '<div class="lib-empty">没有可用的词根分组</div>';
+  }
+
+  /* ================= 探索：图解 ================= */
+  /* 示意图为本项目自绘的简化结构图，仅用于定位词族，不追求解剖精度 */
+  const DIAGRAMS = [
+    {
+      id: 'heart', title: '心脏', note: '心腔、瓣膜与大血管',
+      parts: [
+        { name: '右心房', keys: ['anatomy.heart'] },
+        { name: '左心房', keys: ['anatomy.heart'] },
+        { name: '右心室', keys: ['anatomy.heart', 'physiology.cardio'] },
+        { name: '左心室', keys: ['anatomy.heart', 'physiology.cardio'] },
+        { name: '主动脉', keys: ['anatomy.vessel', 'patho.cardio'] },
+        { name: '肺动脉', keys: ['anatomy.vessel', 'physiology.resp'] },
+        { name: '冠状动脉', keys: ['anatomy.vessel', 'patho.cardio', 'pharm.cardio'] }
+      ],
+      svg: `<svg viewBox="0 0 380 320" role="img" aria-label="心脏示意图">
+        <defs><clipPath id="clipHeart"><path d="M190 132C170 100 124 92 100 122 72 156 100 206 190 292 280 206 308 156 280 122 256 92 210 100 190 132Z"/></clipPath></defs>
+        <g clip-path="url(#clipHeart)">
+          <g class="organ" data-part="右心房"><rect x="60" y="100" width="130" height="92"/><text class="organ-label" x="120" y="152" text-anchor="middle">右心房</text></g>
+          <g class="organ" data-part="左心房"><rect x="190" y="100" width="130" height="92"/><text class="organ-label" x="260" y="152" text-anchor="middle">左心房</text></g>
+          <g class="organ" data-part="右心室"><rect x="60" y="192" width="130" height="102"/><text class="organ-label" x="146" y="222" text-anchor="middle">右心室</text></g>
+          <g class="organ" data-part="左心室"><rect x="190" y="192" width="130" height="102"/><text class="organ-label" x="234" y="222" text-anchor="middle">左心室</text></g>
+        </g>
+        <path class="organ-line" d="M190 132C170 100 124 92 100 122 72 156 100 206 190 292 280 206 308 156 280 122 256 92 210 100 190 132Z"/>
+        <g class="organ vessel" data-part="主动脉"><path d="M206 138C214 104 248 96 264 114"/><text class="organ-label" x="272" y="104">主动脉</text></g>
+        <g class="organ vessel" data-part="肺动脉"><path d="M174 138C166 104 132 96 116 114"/><text class="organ-label" x="108" y="104" text-anchor="end">肺动脉</text></g>
+        <g class="organ vessel" data-part="冠状动脉"><path d="M146 198C172 176 208 176 234 198"/><line class="leader" x1="146" y1="198" x2="120" y2="222"/><text class="organ-label" x="114" y="228" text-anchor="end">冠状动脉</text></g>
+        <text class="map-title" x="190" y="314" text-anchor="middle">心脏 · 心腔、瓣膜与大血管</text>
+      </svg>`
+    },
+    {
+      id: 'brain', title: '脑', note: '脑叶、小脑与脑干',
+      parts: [
+        { name: '额叶', keys: ['anatomy.brain', 'clinical.neuro'] },
+        { name: '顶叶', keys: ['anatomy.brain'] },
+        { name: '颞叶', keys: ['anatomy.brain'] },
+        { name: '枕叶', keys: ['anatomy.brain'] },
+        { name: '小脑', keys: ['anatomy.brain', 'physiology.neuro'] },
+        { name: '脑干', keys: ['anatomy.brain', 'physiology.neuro', 'clinical.neuro'] }
+      ],
+      svg: `<svg viewBox="0 0 360 300" role="img" aria-label="脑示意图">
+        <defs><clipPath id="clipBrain"><ellipse cx="170" cy="132" rx="108" ry="82"/></clipPath></defs>
+        <g clip-path="url(#clipBrain)">
+          <g class="organ" data-part="额叶"><rect x="58" y="46" width="112" height="90"/><text class="organ-label" x="112" y="94" text-anchor="middle">额叶</text></g>
+          <g class="organ" data-part="顶叶"><rect x="170" y="46" width="112" height="90"/><text class="organ-label" x="226" y="94" text-anchor="middle">顶叶</text></g>
+          <g class="organ" data-part="颞叶"><rect x="58" y="136" width="112" height="82"/><text class="organ-label" x="112" y="180" text-anchor="middle">颞叶</text></g>
+          <g class="organ" data-part="枕叶"><rect x="170" y="136" width="112" height="82"/><text class="organ-label" x="226" y="180" text-anchor="middle">枕叶</text></g>
+        </g>
+        <ellipse class="organ-line" cx="170" cy="132" rx="108" ry="82"/>
+        <g class="organ" data-part="小脑"><ellipse cx="262" cy="240" rx="40" ry="24"/><text class="organ-label" x="262" y="244" text-anchor="middle">小脑</text></g>
+        <g class="organ" data-part="脑干"><rect x="142" y="222" width="56" height="30" rx="15"/><text class="organ-label" x="170" y="241" text-anchor="middle">脑干</text></g>
+        <text class="map-title" x="180" y="282" text-anchor="middle">脑 · 脑叶、小脑与脑干</text>
+      </svg>`
+    },
+    {
+      id: 'kidney', title: '肾', note: '皮质、髓质与肾盂',
+      parts: [
+        { name: '肾皮质', keys: ['anatomy.renal'] },
+        { name: '肾髓质', keys: ['anatomy.renal'] },
+        { name: '肾盂', keys: ['anatomy.renal', 'clinical.renal'] },
+        { name: '肾单位', keys: ['physiology.renal'] },
+        { name: '滤过与重吸收', keys: ['physiology.renal', 'pharm.renal'] }
+      ],
+      svg: `<svg viewBox="0 0 360 300" role="img" aria-label="肾示意图">
+        <g class="organ" data-part="肾皮质">
+          <path d="M150 52C96 52 62 100 62 154 62 208 108 248 156 248 184 248 198 228 198 202 198 186 188 172 188 154 188 136 198 122 198 98 198 74 180 52 150 52Z"/>
+          <line class="leader" x1="70" y1="104" x2="88" y2="116"/>
+          <text class="organ-label" x="64" y="100" text-anchor="end">肾皮质</text>
+        </g>
+        <g class="organ" data-part="肾髓质">
+          <path transform="translate(150 152) scale(.66) translate(-150 -152)" d="M150 52C96 52 62 100 62 154 62 208 108 248 156 248 184 248 198 228 198 202 198 186 188 172 188 154 188 136 198 122 198 98 198 74 180 52 150 52Z"/>
+          <text class="organ-label" x="128" y="158">肾髓质</text>
+        </g>
+        <g class="organ" data-part="肾盂">
+          <ellipse cx="184" cy="154" rx="13" ry="26"/>
+          <line class="leader" x1="198" y1="154" x2="224" y2="154"/>
+          <text class="organ-label" x="230" y="158">肾盂</text>
+        </g>
+        <g class="organ" data-part="肾单位">
+          <circle cx="292" cy="92" r="17"/>
+          <line class="leader" x1="276" y1="96" x2="238" y2="120"/>
+          <text class="organ-label" x="300" y="96">肾单位</text>
+        </g>
+        <path class="organ-line" d="M150 52C96 52 62 100 62 154 62 208 108 248 156 248 184 248 198 228 198 202 198 186 188 172 188 154 188 136 198 122 198 98 198 74 180 52 150 52Z"/>
+        <text class="map-title" x="180" y="286" text-anchor="middle">肾 · 皮质、髓质与肾盂</text>
+      </svg>`
+    },
+    {
+      id: 'lung', title: '肺', note: '气道、肺叶与气体交换',
+      parts: [
+        { name: '气管', keys: ['anatomy.resp'] },
+        { name: '支气管', keys: ['anatomy.resp', 'patho.resp'] },
+        { name: '左肺上叶', keys: ['anatomy.resp'] },
+        { name: '左肺下叶', keys: ['anatomy.resp'] },
+        { name: '右肺上叶', keys: ['anatomy.resp'] },
+        { name: '右肺中叶', keys: ['anatomy.resp'] },
+        { name: '右肺下叶', keys: ['anatomy.resp'] },
+        { name: '通气功能', keys: ['physiology.resp', 'physiology.method'] }
+      ],
+      svg: `<svg viewBox="0 0 360 300" role="img" aria-label="肺示意图">
+        <defs>
+          <clipPath id="clipLLung"><path d="M150 104C118 104 92 136 92 182 92 224 116 252 148 252 164 252 172 238 172 220V124C172 112 162 104 150 104Z"/></clipPath>
+          <clipPath id="clipRLung"><path d="M210 104C242 104 268 136 268 182 268 224 244 252 212 252 196 252 188 238 188 220V124C188 112 198 104 210 104Z"/></clipPath>
+        </defs>
+        <g class="organ" data-part="气管"><rect x="170" y="34" width="22" height="58" rx="10"/><text class="organ-label" x="188" y="62">气管</text></g>
+        <g class="organ vessel" data-part="支气管"><path d="M178 92 146 124"/><path d="M184 92 216 124"/><text class="organ-label" x="238" y="86">支气管</text></g>
+        <g clip-path="url(#clipLLung)">
+          <g class="organ" data-part="左肺上叶"><rect x="86" y="100" width="92" height="78"/><text class="organ-label" x="126" y="146" text-anchor="middle">上叶</text></g>
+          <g class="organ" data-part="左肺下叶"><rect x="86" y="178" width="92" height="80"/><text class="organ-label" x="126" y="222" text-anchor="middle">下叶</text></g>
+        </g>
+        <g clip-path="url(#clipRLung)">
+          <g class="organ" data-part="右肺上叶"><rect x="182" y="100" width="92" height="56"/><text class="organ-label" x="228" y="134" text-anchor="middle">上叶</text></g>
+          <g class="organ" data-part="右肺中叶"><rect x="182" y="156" width="92" height="46"/><text class="organ-label" x="228" y="184" text-anchor="middle">中叶</text></g>
+          <g class="organ" data-part="右肺下叶"><rect x="182" y="202" width="92" height="56"/><text class="organ-label" x="228" y="234" text-anchor="middle">下叶</text></g>
+        </g>
+        <path class="organ-line" d="M150 104C118 104 92 136 92 182 92 224 116 252 148 252 164 252 172 238 172 220V124C172 112 162 104 150 104Z"/>
+        <path class="organ-line" d="M210 104C242 104 268 136 268 182 268 224 244 252 212 252 196 252 188 238 188 220V124C188 112 198 104 210 104Z"/>
+        <text class="map-title" x="180" y="286" text-anchor="middle">肺 · 气道、肺叶与气体交换</text>
+      </svg>`
+    }
+  ];
+
+  let activeDiagram = 'heart';
+  let activePart = '';
+
+  function wordsOfKeys(keys) {
+    const seen = new Set();
+    const out = [];
+    keys.forEach(k => {
+      WORDS.filter(w => groupKeyOf(w) === k).forEach(w => {
+        if (!seen.has(w.en)) { seen.add(w.en); out.push(w); }
+      });
+    });
+    return out;
+  }
+
+  function renderMap() {
+    const d = DIAGRAMS.find(x => x.id === activeDiagram) || DIAGRAMS[0];
+    const part = d.parts.find(p => p.name === activePart) || null;
+    const list = wordsOfKeys(part ? part.keys : d.parts.flatMap(p => p.keys));
+
+    $('#exploreMap').innerHTML = `
+      <div class="map-tabs chips">
+        ${DIAGRAMS.map(x => `<button class="chip ${x.id === d.id ? 'on' : ''}" data-diagram="${x.id}">${x.title}</button>`).join('')}
+      </div>
+      <div class="map-body">
+        <div class="map-canvas panel">
+          ${d.svg}
+          <div class="map-legend chips">
+            ${d.parts.map(p => `<button class="chip sm ${part && part.name === p.name ? 'on' : ''}" data-part="${esc(p.name)}">${esc(p.name)}</button>`).join('')}
+          </div>
+        </div>
+        <div class="map-side panel">
+          <h2>${part ? esc(part.name) : d.title + ' 相关词'}</h2>
+          <p class="hint">${part ? '点击图中其他区块或下方标签切换。' : '点击图中任一区块，只看该部位相关的词。'}</p>
+          <div class="map-words">
+            ${list.slice(0, 24).map(w => `<button class="chip sm" data-word="${esc(w.en)}">${esc(w.en)}<i>${esc(w.zh)}</i></button>`).join('') || '<span class="muted">暂无词条</span>'}
+          </div>
+          <div class="map-actions">
+            <span class="muted">共 ${list.length} 词</span>
+            ${part ? `<button class="btn primary" data-study-diagram="1">学习这 ${Math.min(list.length, 60)} 词</button>` : ''}
+          </div>
+        </div>
+      </div>`;
+
+    $$('#exploreMap .organ').forEach(el => el.classList.toggle('is-on', el.dataset.part === activePart));
+  }
+
+  function renderExplore() {
+    renderRoots();
+    renderMap();
+  }
+  /* ================= 统计 ================= */
   function renderStats() {
     const total = WORDS.length;
     const seen = WORDS.filter(w => !isNew(w.en)).length;
@@ -883,10 +1171,18 @@
         <span class="day">${x.label}</span>
       </div>`).join('');
 
-    /* 最近 30 天热力图 */
+    /* 全年热力图：53 周 × 7 天，按周一为每周起点对齐 */
     const heat = [];
-    for (let i = 29; i >= 0; i--) {
-      const d = addDays(todayStr(), -i);
+    const end = todayStr();
+    const dow = (new Date(end + 'T00:00:00').getDay() + 6) % 7; // 周一=0
+    const span = 52 * 7 + dow + 1;
+    const start = addDays(end, -(span - 1));
+    for (let i = 0; i < span; i++) {
+      const d = addDays(start, i);
+      if (d > end) {
+        heat.push('<i class="heat-cell blank"></i>');
+        continue;
+      }
       const day = state.days[d] || {};
       const n = (day.reviews || 0) + (day.quiz || 0);
       const lvl = n === 0 ? 0 : n < 5 ? 1 : n < 15 ? 2 : n < 30 ? 3 : 4;
@@ -897,13 +1193,14 @@
 
   /* ================= 视图切换 ================= */
   let currentView = 'study';
-  const VIEWS = ['study', 'library', 'quiz', 'stats'];
+  const VIEWS = ['study', 'library', 'explore', 'quiz', 'stats'];
 
   function switchView(name, fromHash) {
     currentView = name;
     $$('.tab').forEach(t => t.classList.toggle('is-active', t.dataset.view === name));
     $$('.view').forEach(v => v.classList.toggle('is-active', v.id === 'view-' + name));
     if (name === 'library') renderLibrary();
+    if (name === 'explore') renderExplore();
     if (name === 'stats') renderStats();
     if (name === 'study') { renderStudyStage(); renderSetup(); }
     if (name === 'quiz' && !quiz) $('#quizStage').innerHTML = quizEmpty();
@@ -950,6 +1247,62 @@
     if (tab) { switchView(tab.dataset.view); return; }
 
     if (e.target.closest('#btnTheme')) { toggleTheme(); return; }
+
+    /* ---- 探索：词根 / 图解 ---- */
+    const expSeg = e.target.closest('#exploreSeg button');
+    if (expSeg) {
+      const mode = expSeg.dataset.exp;
+      $$('#exploreSeg button').forEach(b => b.classList.toggle('on', b === expSeg));
+      $('#exploreRoot').hidden = mode !== 'root';
+      $('#exploreMap').hidden = mode !== 'map';
+      $('#exploreHint').textContent = mode === 'root'
+        ? '按词根把同源词放在一起：先认词根，再认词族。'
+        : '点击图中区块，只看该部位相关的词。示意图为简化结构，仅作词族索引，不作为解剖学参考。';
+      return;
+    }
+    const diagramBtn = e.target.closest('[data-diagram]');
+    if (diagramBtn) {
+      activeDiagram = diagramBtn.dataset.diagram;
+      activePart = '';
+      renderMap();
+      return;
+    }
+    const partBtn = e.target.closest('[data-part]');
+    if (partBtn) {
+      activePart = partBtn.dataset.part;
+      renderMap();
+      return;
+    }
+    const studyRoot = e.target.closest('[data-study-root]');
+    if (studyRoot) {
+      startStudyWith(rootMembers(studyRoot.dataset.studyRoot).map(w => w.en));
+      return;
+    }
+    const listRoot = e.target.closest('[data-list-root]');
+    if (listRoot) {
+      $('#libStatus').value = 'all';
+      $('#libCat').value = 'all';
+      $('#libSearch').value = listRoot.dataset.listRoot;
+      libLimit = 200;
+      switchView('library');
+      return;
+    }
+    const studyPart = e.target.closest('[data-study-diagram]');
+    if (studyPart) {
+      const d = DIAGRAMS.find(x => x.id === activeDiagram);
+      const p = d && d.parts.find(x => x.name === activePart);
+      if (p) startStudyWith(wordsOfKeys(p.keys).map(w => w.en));
+      return;
+    }
+    const wordChip = e.target.closest('[data-word]');
+    if (wordChip) {
+      $('#libStatus').value = 'all';
+      $('#libCat').value = 'all';
+      $('#libSearch').value = wordChip.dataset.word;
+      libLimit = 200;
+      switchView('library');
+      return;
+    }
 
     const catChip = e.target.closest('[data-cat]');
     if (catChip) {
@@ -1041,13 +1394,19 @@
     }
 
     if (e.target.closest('#btnExport')) { exportData(); return; }
+    if (e.target.closest('#btnWordTemplate')) { downloadWordTemplate(); return; }
+    if (e.target.closest('#btnClearCustom')) { clearCustomWords(); return; }
 
     if (e.target.closest('#libMore')) { libLimit += 300; renderLibrary(); return; }
     if (e.target.closest('#btnReset')) {
       if (confirm('确定要清空全部学习进度吗？此操作不可撤销。')) {
+        const keepCustom = state.customWords || [];
         state = defaultState();
+        state.customWords = keepCustom;
+        rebuildWords();
         save();
         study = null; quiz = null;
+        renderCatOptions(); renderCustomInfo();
         renderChips(); renderSetup(); renderHeader(); renderStudyStage();
         $('#quizStage').innerHTML = quizEmpty();
         if (currentView === 'stats') renderStats();
@@ -1077,6 +1436,7 @@
   document.addEventListener('change', e => {
     if (e.target.id === 'libCat' || e.target.id === 'libStatus') { libLimit = 200; renderLibrary(); }
     if (e.target.id === 'importFile') importData(e.target.files[0]);
+    if (e.target.id === 'importWords') importWordList(e.target.files[0]);
   });
 
   document.addEventListener('keydown', e => {
@@ -1133,8 +1493,11 @@
         state.days = data.days || {};
         state.totals = Object.assign({ reviews: 0, correct: 0 }, data.totals || {});
         if (data.settings) state.settings = Object.assign(state.settings, data.settings);
+        if (Array.isArray(data.customWords)) state.customWords = data.customWords;
         if (!Array.isArray(state.settings.groups) || !state.settings.groups.length) state.settings.groups = allGroupKeys();
+        rebuildWords();
         save();
+        renderCatOptions(); renderCustomInfo();
         renderChips(); renderSetup(); renderHeader(); renderStats(); renderLibrary();
         toast('进度已导入');
       } catch (err) {
@@ -1142,6 +1505,123 @@
       }
     };
     reader.readAsText(file);
+  }
+
+  /* ================= 自定义词表 ================= */
+  function splitCsvLine(line) {
+    const out = [];
+    let cur = '';
+    let quoted = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (quoted) {
+        if (ch === '"' && line[i + 1] === '"') { cur += '"'; i++; }
+        else if (ch === '"') quoted = false;
+        else cur += ch;
+      } else if (ch === '"') {
+        quoted = true;
+      } else if (ch === ',') {
+        out.push(cur); cur = '';
+      } else {
+        cur += ch;
+      }
+    }
+    out.push(cur);
+    return out;
+  }
+
+  function renderCatOptions() {
+    $('#libCat').innerHTML = '<option value="all">全部学科</option>' +
+      CAT_KEYS.map(k => `<option value="${k}">${CATEGORIES[k]}</option>`).join('');
+  }
+
+  function renderCustomInfo() {
+    const n = (state.customWords || []).length;
+    const el = $('#customInfo');
+    if (!el) return;
+    el.innerHTML = n
+      ? `已导入 <b>${n}</b> 条自定义词条，可在词库的「自建词表」中查看。<button class="link-btn" id="btnClearCustom">清空自定义词表</button>`
+      : '自定义词表会作为「自建词表」学科出现在学习与词库中，只存在本机。CSV 每行：<code>英文,音标,中文释义,记忆点</code>（音标与记忆点可留空）。';
+  }
+
+  function refreshAfterWordsChange() {
+    rebuildWords();
+    renderCatOptions();
+    renderChips();
+    renderGroupChips();
+    renderSetup();
+    renderHeader();
+    renderLibrary();
+    renderStats();
+    renderCustomInfo();
+  }
+
+  function importWordList(file) {
+    if (!file) return;
+    const listName = (file.name || '自定义').replace(/\.[^.]+$/, '').slice(0, 20) || '自定义';
+    const group = 'u' + Date.now().toString(36);
+    const reader = new FileReader();
+    reader.onload = () => {
+      const text = String(reader.result || '').replace(/^\ufeff/, '').trim();
+      if (!text) { toast('文件是空的'); return; }
+
+      let rows = [];
+      if (text[0] === '[' || text[0] === '{') {
+        try {
+          const data = JSON.parse(text);
+          const arr = Array.isArray(data) ? data : (data.words || []);
+          rows = arr.map(x => Array.isArray(x) ? x : [x.en || x.term, x.ipa, x.zh || x.meaning, x.note]);
+        } catch (e) {
+          toast('JSON 解析失败，请检查格式');
+          return;
+        }
+      } else {
+        rows = text.split(/\r?\n/).map(l => splitCsvLine(l).map(s => s.trim()));
+        if (rows.length && /^(英文|word|term)$/i.test(rows[0][0])) rows.shift();
+      }
+
+      const seen = new Set(WORDS.map(w => w.en.toLowerCase()));
+      const added = [];
+      rows.forEach(r => {
+        const en = String((r && r[0]) || '').trim();
+        const zh = String((r && r[2]) || '').trim();
+        if (!en || !zh) return;
+        if (seen.has(en.toLowerCase())) return;
+        seen.add(en.toLowerCase());
+        added.push({
+          en, zh,
+          ipa: String((r && r[1]) || '').trim(),
+          note: String((r && r[3]) || '').trim(),
+          group, groupLabel: listName
+        });
+      });
+
+      if (!added.length) { toast('没有可导入的新词条'); return; }
+      state.customWords = (state.customWords || []).concat(added).slice(0, 5000);
+      save();
+      refreshAfterWordsChange();
+      toast(`已导入 ${added.length} 个词条`);
+    };
+    reader.readAsText(file);
+  }
+
+  function downloadWordTemplate() {
+    const csv = '\ufeff英文,音标,中文释义,记忆点\nmyocardial infarction,/ˌmaɪəˈkɑːrdiəl ɪnˈfɑːrkʃn/,心肌梗死,myo- 肌 + cardial 心的\n';
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'medlexicon-wordlist-template.csv';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  function clearCustomWords() {
+    if (!(state.customWords || []).length) return;
+    if (!confirm('确定清空所有自定义词表吗？内置词库不受影响。')) return;
+    state.customWords = [];
+    save();
+    refreshAfterWordsChange();
+    toast('自定义词表已清空');
   }
 
   /* ================= 离线缓存 ================= */
@@ -1153,14 +1633,12 @@
 
   /* ================= 启动 ================= */
   function init() {
-    const catSel = $('#libCat');
-    catSel.innerHTML = '<option value="all">全部学科</option>' +
-      CAT_KEYS.map(k => `<option value="${k}">${CATEGORIES[k]}</option>`).join('');
-
+    renderCatOptions();
     renderChips();
     renderSetup();
     renderHeader();
     renderStudyStage();
+    renderCustomInfo();
     $('#quizStage').innerHTML = quizEmpty();
 
     const hv = viewFromHash();

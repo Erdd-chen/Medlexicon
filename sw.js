@@ -1,5 +1,5 @@
 /* 离线缓存：核心页面与词库预缓存，断网也能继续背词 */
-const CACHE = 'medlexicon-v8';
+const CACHE = 'medlexicon-v9';
 const ASSETS = [
   './',
   './index.html',

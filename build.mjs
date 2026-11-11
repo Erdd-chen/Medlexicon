@@ -4,7 +4,7 @@
  * 输出：words.js（覆盖）
  * 流程：读现有 RAW_WORDS → 追加 NEW_BATCH → 英文小写去重 → 按学科+分组排序 → 自动生成头部统计
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -4133,6 +4133,31 @@ const NEW_SUB_3 = [
 ];
 
 /* ========== 汇总所有新增词源 ========== */
+/* ========== 合并 seed/*.json（外部补充词条） ========== */
+const SEED_DIR = join(__dir, 'seed');
+const SEED_ROWS = [];
+if (existsSync(SEED_DIR)) {
+  for (const f of readdirSync(SEED_DIR).filter(n => n.endsWith('.json')).sort()) {
+    let data = null;
+    try {
+      data = JSON.parse(readFileSync(join(SEED_DIR, f), 'utf8'));
+    } catch (err) {
+      console.warn(`seed ${f}：JSON 解析失败，已跳过（${err.message}）`);
+      continue;
+    }
+    const rows = Array.isArray(data) ? data : (Array.isArray(data.words) ? data.words : []);
+    let ok = 0, bad = 0;
+    for (const r of rows) {
+      if (!Array.isArray(r) || r.length < 5) { bad++; continue; }
+      const [en, ipa, zh, cat, group] = r;
+      if (!CATEGORIES[cat] || !GROUPS[cat] || !GROUPS[cat][group]) { bad++; continue; }
+      SEED_ROWS.push([String(en).trim(), String(ipa || ''), String(zh || ''), cat, group, String(r[5] || '')]);
+      ok++;
+    }
+    console.log(`seed ${f}：载入 ${ok} 条，跳过 ${bad} 条`);
+  }
+}
+
 const NEW_ENTRIES = [
   ...NEW_ANATOMY_ORGAN,
   ...NEW_PHYSIOLOGY,
@@ -4149,6 +4174,7 @@ const NEW_ENTRIES = [
   ...NEW_SUB_1,
   ...NEW_SUB_2,
   ...NEW_SUB_3,
+  ...SEED_ROWS,
 ];
 
 /* ========== 合并去重并输出 ========== */

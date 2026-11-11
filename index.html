@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MediLexicon · 医学英语记忆</title>
-<meta name="description" content="医学英语词汇记忆工具：3,898 词 / 12 学科 / 211 细分小组，SM-2 间隔重复。">
+<meta name="description" content="医学英语词汇记忆工具：5,203 词 / 12 学科 / 211 细分小组，SM-2 间隔重复。">
 <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b1116" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 <script>
   try {
     var saved = localStorage.getItem('medlexicon.theme');
@@ -35,6 +35,7 @@
   <nav class="tabs" id="tabs">
     <button class="tab is-active" data-view="study">学习</button>
     <button class="tab" data-view="library">词库</button>
+    <button class="tab" data-view="explore">探索</button>
     <button class="tab" data-view="quiz">测验</button>
     <button class="tab" data-view="stats">统计</button>
   </nav>
@@ -141,6 +142,19 @@
     <div class="stage" id="quizStage"></div>
   </section>
 
+  <!-- ============ 探索：词根 / 图解 ============ -->
+  <section class="view" id="view-explore">
+    <div class="panel explore-head">
+      <div class="seg" id="exploreSeg">
+        <button data-exp="root" class="on">词根</button>
+        <button data-exp="map">图解</button>
+      </div>
+      <p class="hint" id="exploreHint">按词根把同源词放在一起：先认词根，再认词族。</p>
+    </div>
+    <div class="explore-panel" id="exploreRoot"></div>
+    <div class="explore-panel" id="exploreMap" hidden></div>
+  </section>
+
   <!-- ============ 统计 ============ -->
   <section class="view" id="view-stats">
     <div class="stat-grid" id="statGrid"></div>
@@ -156,9 +170,13 @@
     </div>
 
     <div class="panel">
-      <h2>最近 30 天</h2>
-      <div class="heat" id="heatMap"></div>
-      <p class="hint">每格代表一天，颜色越深复习量越大。</p>
+      <h2>全年学习记录</h2>
+      <div class="heat-year-wrap"><div class="heat-year" id="heatMap"></div></div>
+      <div class="heat-legend">
+        <span>少</span>
+        <i class="heat-cell l0"></i><i class="heat-cell l1"></i><i class="heat-cell l2"></i><i class="heat-cell l3"></i><i class="heat-cell l4"></i>
+        <span>多</span>
+      </div>
     </div>
 
     <div class="panel">
@@ -168,15 +186,19 @@
         <button class="btn" id="btnExport">导出进度</button>
         <label class="btn" for="importFile">导入进度</label>
         <input type="file" id="importFile" accept="application/json" hidden>
+        <label class="btn" for="importWords">导入自定义词表</label>
+        <input type="file" id="importWords" accept=".csv,.json,text/csv,application/json" hidden>
+        <button class="btn" id="btnWordTemplate">下载词表模板</button>
         <button class="btn danger" id="btnReset">重置全部进度</button>
       </div>
+      <p class="hint" id="customInfo">自定义词表会作为「自建词表」学科出现在学习与词库中，只存在本机。CSV 每行：<code>英文,音标,中文释义,记忆点</code>（音标与记忆点可留空）。</p>
     </div>
   </section>
 </main>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="words.js?v=8"></script>
-<script src="app.js?v=8"></script>
+<script src="words.js?v=9"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>

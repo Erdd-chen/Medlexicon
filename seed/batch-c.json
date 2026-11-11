@@ -1,0 +1,3722 @@
+[
+[
+"meconium aspiration syndrome",
+"/mɪˈkoʊniəm ˌæspəˈreɪʃən ˈsɪndroʊm/",
+"胎粪吸入综合征",
+"clinical",
+"pediatrics",
+"meconium 胎粪吸入"
+],
+[
+"bronchopulmonary dysplasia",
+"/ˌbrɑːŋkoʊˈpʊlməneri dɪsˈpleɪʒə/",
+"支气管肺发育不良",
+"clinical",
+"pediatrics",
+"broncho- 支气管+肺"
+],
+[
+"umbilical hernia",
+"/ʌmˈbɪlɪkl ˈhɜːrniə/",
+"脐疝",
+"clinical",
+"pediatrics",
+"脐环未闭，多可自愈"
+],
+[
+"retinopathy of prematurity",
+"/ˌretɪˈnɑːpəθi əv prɪməˈtʃʊrəti/",
+"早产儿视网膜病变",
+"clinical",
+"pediatrics",
+"retina 视网膜+早产"
+],
+[
+"intraventricular hemorrhage",
+"/ˌɪntrəvenˈtrɪkjələr ˈhemərɪdʒ/",
+"脑室内出血",
+"clinical",
+"pediatrics",
+"生发基质血管出血"
+],
+[
+"coarctation of the aorta",
+"/ˌkoʊɑːrkˈteɪʃən əv ði eɪˈɔːrtə/",
+"主动脉缩窄",
+"clinical",
+"pediatrics",
+"coarctation 缩窄"
+],
+[
+"neonatal sepsis",
+"/ˌniːoʊˈneɪtl ˈsepsɪs/",
+"新生儿脓毒症",
+"clinical",
+"pediatrics",
+"生后 28 天内全身感染"
+],
+[
+"tricuspid atresia",
+"/traɪˈkʌspɪd əˈtriːʒə/",
+"三尖瓣闭锁",
+"clinical",
+"pediatrics",
+"tri- 三+cuspid 尖瓣"
+],
+[
+"cerebral palsy",
+"/ˈserəbrəl ˈpɔːlzi/",
+"脑性瘫痪",
+"clinical",
+"pediatrics",
+"大脑瘫，非进行性"
+],
+[
+"hypoxic-ischemic encephalopathy",
+"/haɪˈpɑːksɪk ɪˈskiːmɪk enˌsefəˈlɑːpəθi/",
+"缺氧缺血性脑病",
+"clinical",
+"pediatrics",
+"hypoxic 缺氧+缺血"
+],
+[
+"pyloric stenosis",
+"/paɪˈlɔːrɪk stəˈnoʊsɪs/",
+"幽门狭窄",
+"clinical",
+"pediatrics",
+"pylorus 幽门+狭窄"
+],
+[
+"intussusception",
+"/ˌɪntəsəˈsepʃən/",
+"肠套叠",
+"clinical",
+"pediatrics",
+"肠管套入肠管"
+],
+[
+"hirschsprung disease",
+"/ˈhɜːrʃsprʌŋ dɪˈziːz/",
+"先天性巨结肠",
+"clinical",
+"pediatrics",
+"无神经节细胞，肠管痉挛"
+],
+[
+"malignant pleural effusion",
+"/məˈlɪɡnənt ˈplʊrəl ɪˈfjuːʒən/",
+"恶性胸腔积液",
+"clinical",
+"tumor",
+"胸水找脱落细胞"
+],
+[
+"invasive carcinoma",
+"/ɪnˈveɪsɪv ˌkɑːrsɪˈnoʊmə/",
+"浸润癌",
+"clinical",
+"tumor",
+"invasive 浸润性"
+],
+[
+"hematogenous spread",
+"/ˌhiːməˈtɑːdʒənəs spred/",
+"血行播散",
+"clinical",
+"tumor",
+"血行播散途径"
+],
+[
+"distant metastasis",
+"/ˈdɪstənt məˈstæsɪs/",
+"远处转移",
+"clinical",
+"tumor",
+"distant 远处转移"
+],
+[
+"cytoreductive surgery",
+"/ˌsaɪtoʊrɪˈdʌktɪv ˈsɜːrdʒəri/",
+"肿瘤细胞减灭术",
+"clinical",
+"tumor",
+"肿瘤细胞减灭"
+],
+[
+"recist criteria",
+"/rɪˈsɪst kraɪˈtɪriə/",
+"实体瘤疗效评价标准",
+"clinical",
+"tumor",
+"实体瘤疗效标准"
+],
+[
+"progressive disease",
+"/prəˈɡresɪv dɪˈziːz/",
+"疾病进展",
+"clinical",
+"tumor",
+"病灶增大或出现新病灶"
+],
+[
+"partial response",
+"/ˈpɑːrʃl rɪˈspɑːns/",
+"部分缓解",
+"clinical",
+"tumor",
+"病灶缩小达 30% 以上"
+],
+[
+"complete response",
+"/kəmˈpliːt rɪˈspɑːns/",
+"完全缓解",
+"clinical",
+"tumor",
+"病灶完全消失"
+],
+[
+"tumor lysis syndrome",
+"/ˈtuːmər ˈlaɪsɪs ˈsɪndroʊm/",
+"肿瘤溶解综合征",
+"clinical",
+"tumor",
+"lysis 溶解，致高钾高磷低钙"
+],
+[
+"febrile neutropenia",
+"/ˈfebraɪl ˌnuːtrəˈpiːniə/",
+"粒细胞缺乏伴发热",
+"clinical",
+"tumor",
+"化疗后急症，需广谱抗生素"
+],
+[
+"superior vena cava syndrome",
+"/suːˈpɪriər ˈviːnə ˈkeɪvə ˈsɪndroʊm/",
+"上腔静脉综合征",
+"clinical",
+"tumor",
+"面颈肿胀，纵隔肿物压迫"
+],
+[
+"advance directive",
+"/ədˈvæns dəˈrektɪv/",
+"预立医疗指示",
+"clinical",
+"geriatrics",
+"事先说明终末期意愿"
+],
+[
+"living will",
+"/ˈlɪvɪŋ wɪl/",
+"生前预嘱",
+"clinical",
+"geriatrics",
+"书面表达放弃何种治疗"
+],
+[
+"healthcare proxy",
+"/ˈhelθker ˈprɑːksi/",
+"医疗代理人",
+"clinical",
+"geriatrics",
+"proxy 代理，代为决策"
+],
+[
+"prescribing cascade",
+"/prɪˈskraɪbɪŋ kæˈskeɪd/",
+"处方瀑布",
+"clinical",
+"geriatrics",
+"药物副作用被当作新病用药"
+],
+[
+"beers criteria",
+"/bɪrz kraɪˈtɪriə/",
+"老年人不当用药标准",
+"clinical",
+"geriatrics",
+"Beers 标准，慎用镇静药"
+],
+[
+"anticholinergic burden",
+"/ˌæntikɑːlɪˈnɜːrdʒɪk ˈbɜːrdn/",
+"抗胆碱能负荷",
+"clinical",
+"geriatrics",
+"多药叠加致谵妄、便秘"
+],
+[
+"timed up and go test",
+"/taɪmd ʌp ənd ɡoʊ test/",
+"起立行走测试",
+"clinical",
+"geriatrics",
+"测步态与跌倒风险"
+],
+[
+"mini-mental state examination",
+"/ˈmɪni ˈmentl steɪt ɪɡˌzæmɪˈneɪʃən/",
+"简易精神状态检查",
+"clinical",
+"geriatrics",
+"MMSE，30 分制认知筛查"
+],
+[
+"multimorbidity",
+"/ˌmʌltimɔːrˈbɪdəti/",
+"多病共存",
+"clinical",
+"geriatrics",
+"multi- 多+疾病"
+],
+[
+"deprescribing",
+"/ˌdiːprɪˈskraɪbɪŋ/",
+"减药处方",
+"clinical",
+"geriatrics",
+"de- 去除，逐步停用不必要药"
+],
+[
+"total pain",
+"/ˈtoʊtl peɪn/",
+"整体疼痛",
+"clinical",
+"palliative",
+"躯体+心理+社会+灵性"
+],
+[
+"breakthrough pain",
+"/ˈbreɪkθruː peɪn/",
+"爆发痛",
+"clinical",
+"palliative",
+"基础镇痛下的突发剧痛"
+],
+[
+"neuropathic pain",
+"/ˌnʊrəˈpæθɪk peɪn/",
+"神经病理性疼痛",
+"clinical",
+"palliative",
+"neuro- 神经+病变"
+],
+[
+"nociceptive pain",
+"/ˌnoʊsɪˈseptɪv peɪn/",
+"伤害性疼痛",
+"clinical",
+"palliative",
+"伤害感受器介导"
+],
+[
+"opioid rotation",
+"/ˈoʊpiɔɪd roʊˈteɪʃən/",
+"阿片类药物轮换",
+"clinical",
+"palliative",
+"换药改善耐受与镇痛"
+],
+[
+"opioid-induced constipation",
+"/ˈoʊpiɔɪd ɪnˈduːst ˌkɑːnstɪˈpeɪʃən/",
+"阿片所致便秘",
+"clinical",
+"palliative",
+"预防性用缓泻剂"
+],
+[
+"malignant bowel obstruction",
+"/məˈlɪɡnənt ˈbaʊəl əbˈstrʌkʃən/",
+"恶性肠梗阻",
+"clinical",
+"palliative",
+"肿瘤所致，多保守处理"
+],
+[
+"terminal agitation",
+"/ˈtɜːrmɪnl ˌædʒɪˈteɪʃən/",
+"终末期躁动",
+"clinical",
+"palliative",
+"濒死前不安，需镇静"
+],
+[
+"palliative sedation",
+"/ˈpæliətɪv sɪˈdeɪʃən/",
+"缓和镇静",
+"clinical",
+"palliative",
+"难治症状时深度镇静"
+],
+[
+"death rattle",
+"/deθ ˈrætl/",
+"濒死喉鸣",
+"clinical",
+"palliative",
+"分泌物潴留的临终声响"
+],
+[
+"resting energy expenditure",
+"/ˈrestɪŋ ˈenərdʒi ɪkˈspendɪtʃər/",
+"静息能量消耗",
+"clinical",
+"nutrition",
+"REE，维持基础代谢所需"
+],
+[
+"indirect calorimetry",
+"/ˌɪndəˈrekt ˌkæləˈrɪmətri/",
+"间接测热法",
+"clinical",
+"nutrition",
+"测 O₂ 耗与 CO₂ 产热"
+],
+[
+"positive nitrogen balance",
+"/ˈpɑːzətɪv ˈnaɪtrədʒən ˈbæləns/",
+"正氮平衡",
+"clinical",
+"nutrition",
+"摄入氮大于排出氮"
+],
+[
+"gastric residual volume",
+"/ˈɡæstrɪk rɪˈzɪdʒuəl ˈvɑːljuːm/",
+"胃残余量",
+"clinical",
+"nutrition",
+"评估鼻饲耐受性"
+],
+[
+"texture-modified diet",
+"/ˈtekstʃər ˈmɑːdɪfaɪd ˈdaɪət/",
+"质地改良饮食",
+"clinical",
+"nutrition",
+"增稠或泥状防误吸"
+],
+[
+"oral nutritional supplement",
+"/ˈɔːrəl nuːˈtrɪʃənl ˈsʌplɪmənt/",
+"口服营养补充",
+"clinical",
+"nutrition",
+"ONS，经口补充营养"
+],
+[
+"protein-energy malnutrition",
+"/ˈproʊtiːn ˈenərdʒi ˌmælnuːˈtrɪʃən/",
+"蛋白质能量营养不良",
+"clinical",
+"nutrition",
+"PEM，蛋白与热量均不足"
+],
+[
+"kwashiorkor",
+"/ˌkwɑːʃiˈɔːrkɔːr/",
+"夸希奥科病",
+"clinical",
+"nutrition",
+"蛋白缺乏为主，水肿"
+],
+[
+"marasmus",
+"/məˈræzməs/",
+"消瘦型营养不良",
+"clinical",
+"nutrition",
+"热量缺乏为主，极度消瘦"
+],
+[
+"sarcopenic obesity",
+"/ˌsɑːrkoʊˈpiːnɪk oʊˈbiːsəti/",
+"肌少性肥胖",
+"clinical",
+"nutrition",
+"脂肪多而肌肉少"
+],
+[
+"toxidrome",
+"/ˈtɑːksɪdroʊm/",
+"中毒综合征",
+"clinical",
+"poisoning",
+"中毒症候群"
+],
+[
+"gastric decontamination",
+"/ˈɡæstrɪk ˌdiːkəntæmɪˈneɪʃən/",
+"胃肠道去污",
+"clinical",
+"poisoning",
+"去除胃肠道毒物"
+],
+[
+"whole bowel irrigation",
+"/hoʊl ˈbaʊəl ˌɪrɪˈɡeɪʃən/",
+"全肠灌洗",
+"clinical",
+"poisoning",
+"聚乙二醇灌洗，排缓释药"
+],
+[
+"extracorporeal elimination",
+"/ˌekstrəkɔːrˈpɔːriəl ɪˌlɪmɪˈneɪʃən/",
+"体外清除",
+"clinical",
+"poisoning",
+"血透或血液灌流解毒"
+],
+[
+"chelating agent",
+"/ˈkiːleɪtɪŋ ˈeɪdʒənt/",
+"螯合剂",
+"clinical",
+"poisoning",
+"chela 蟹钳，钳住金属"
+],
+[
+"lipid emulsion therapy",
+"/ˈlɪpɪd ɪˈmʌlʃən ˈθerəpi/",
+"脂肪乳解救治疗",
+"clinical",
+"poisoning",
+"脂溶性药中毒解救"
+],
+[
+"benzodiazepine overdose",
+"/ˌbenzodaɪˈæzəpiːn ˈoʊvərdoʊs/",
+"苯二氮䓬过量",
+"clinical",
+"poisoning",
+"flumazenil 拮抗"
+],
+[
+"toxic alcohol",
+"/ˈtɑːksɪk ˈælkəhɔːl/",
+"毒性醇类中毒",
+"clinical",
+"poisoning",
+"甲醇、乙二醇"
+],
+[
+"iron overdose",
+"/ˈaɪərn ˈoʊvərdoʊs/",
+"铁过量",
+"clinical",
+"poisoning",
+"deferoxamine 螯合"
+],
+[
+"cyanide poisoning",
+"/ˈsaɪənaɪd ˈpɔɪzənɪŋ/",
+"氰化物中毒",
+"clinical",
+"poisoning",
+"抑制细胞色素氧化酶"
+],
+[
+"methanol poisoning",
+"/ˈmeθənɑːl ˈpɔɪzənɪŋ/",
+"甲醇中毒",
+"clinical",
+"poisoning",
+"致视神经损害"
+],
+[
+"hyperbaric oxygen",
+"/ˌhaɪpərˈbærɪk ˈɑːksɪdʒən/",
+"高压氧",
+"clinical",
+"poisoning",
+"一氧化碳中毒首选"
+],
+[
+"heat stroke",
+"/hiːt stroʊk/",
+"热射病",
+"clinical",
+"poisoning",
+"核心体温>40℃伴意识障碍"
+],
+[
+"neurorehabilitation",
+"/ˌnʊroʊˌriːəˌbɪlɪˈteɪʃən/",
+"神经康复",
+"clinical",
+"rehab",
+"卒中后功能重建"
+],
+[
+"cardiac rehabilitation",
+"/ˈkɑːrdiæk ˌriːəˌbɪlɪˈteɪʃən/",
+"心脏康复",
+"clinical",
+"rehab",
+"运动+教育+危险因素管理"
+],
+[
+"pulmonary rehabilitation",
+"/ˈpʊlməneri ˌriːəˌbɪlɪˈteɪʃən/",
+"肺康复",
+"clinical",
+"rehab",
+"COPD 呼吸训练与运动"
+],
+[
+"proprioceptive neuromuscular facilitation",
+"/ˌproʊprioʊˈseptɪv ˌnʊroʊmʌˈskjələr fəˌsɪlɪˈteɪʃən/",
+"本体感觉神经肌肉促进",
+"clinical",
+"rehab",
+"PNF 牵伸与收缩交替"
+],
+[
+"constraint-induced movement therapy",
+"/kənˈstreɪnt ɪnˈduːst ˈmuːvmənt ˈθerəpi/",
+"强制性使用运动疗法",
+"clinical",
+"rehab",
+"限制健侧，强制用患侧"
+],
+[
+"mirror therapy",
+"/ˈmɪrər ˈθerəpi/",
+"镜像治疗",
+"clinical",
+"rehab",
+"镜中健侧影像骗过大脑"
+],
+[
+"transcutaneous electrical nerve stimulation",
+"/ˌtrænzkjuˈteɪniəs ɪˈlektrɪkl nɜːrv ˌstɪmjəˈleɪʃən/",
+"经皮神经电刺激",
+"clinical",
+"rehab",
+"TENS，闸门控制镇痛"
+],
+[
+"functional electrical stimulation",
+"/ˈfʌŋkʃənl ɪˈlektrɪkl ˌstɪmjəˈleɪʃən/",
+"功能性电刺激",
+"clinical",
+"rehab",
+"FES，助足下垂行走"
+],
+[
+"spasticity management",
+"/spæˈstɪsəti ˈmænɪdʒmənt/",
+"痉挛管理",
+"clinical",
+"rehab",
+"肉毒素+牵伸+药物"
+],
+[
+"modified ashworth scale",
+"/ˈmɑːdɪfaɪd ˈæʃwɜːrθ skeɪl/",
+"改良 Ashworth 量表",
+"clinical",
+"rehab",
+"评肌张力分级 0-4"
+],
+[
+"escharotomy",
+"/ˌeskəˈrɑːtəmi/",
+"焦痂切开术",
+"clinical",
+"plastics",
+"eschar 焦痂+切开"
+],
+[
+"fasciotomy",
+"/ˌfæʃiˈɑːtəmi/",
+"筋膜切开术",
+"clinical",
+"plastics",
+"筋膜室减压，防坏死"
+],
+[
+"tissue expansion",
+"/ˈtɪʃuː ɪkˈspænʃən/",
+"组织扩张",
+"clinical",
+"plastics",
+"埋置扩张器再生皮肤"
+],
+[
+"pedicled flap",
+"/ˈpedɪkld flæp/",
+"带蒂皮瓣",
+"clinical",
+"plastics",
+"pedicle 蒂，保留血供"
+],
+[
+"perforator flap",
+"/ˈpɜːrfəreɪtər flæp/",
+"穿支皮瓣",
+"clinical",
+"plastics",
+"仅带穿支血管的皮瓣"
+],
+[
+"negative pressure wound therapy",
+"/ˈneɡətɪv ˈpreʃər wuːnd ˈθerəpi/",
+"负压伤口治疗",
+"clinical",
+"plastics",
+"VAC，促肉芽生长"
+],
+[
+"hypertrophic scar",
+"/ˌhaɪpərˈtrɑːfɪk skɑːr/",
+"增生性瘢痕",
+"clinical",
+"plastics",
+"限于原伤口范围内"
+],
+[
+"scar revision",
+"/skɑːr rɪˈvɪʒən/",
+"瘢痕修整术",
+"clinical",
+"plastics",
+"revision 修整"
+],
+[
+"scar contracture",
+"/skɑːr kənˈtræktʃər/",
+"瘢痕挛缩",
+"clinical",
+"plastics",
+"跨关节致活动受限"
+],
+[
+"inhalation injury",
+"/ˌɪnhəˈleɪʃən ˈɪndʒəri/",
+"吸入性损伤",
+"clinical",
+"plastics",
+"热力或烟雾致气道损伤"
+],
+[
+"burr hole",
+"/bɜːr hoʊl/",
+"颅骨钻孔",
+"clinical",
+"neurosurgery",
+"锥形钻孔引流血肿"
+],
+[
+"aneurysm clipping",
+"/ˈænjərɪzəm ˈklɪpɪŋ/",
+"动脉瘤夹闭",
+"clinical",
+"neurosurgery",
+"开颅夹闭瘤颈"
+],
+[
+"coil embolization",
+"/kɔɪl ˌembəlɪˈzeɪʃən/",
+"弹簧圈栓塞",
+"clinical",
+"neurosurgery",
+"介入填塞动脉瘤"
+],
+[
+"endovascular thrombectomy",
+"/ˌendoʊˈvæskjələr θrɑːmˈbektəmi/",
+"血管内取栓",
+"clinical",
+"neurosurgery",
+"大血管闭塞卒中介入"
+],
+[
+"carotid endarterectomy",
+"/kəˈrɑːtɪd ˌendɑːrtəˈrektəmi/",
+"颈动脉内膜切除术",
+"clinical",
+"neurosurgery",
+"颈动脉内膜剥脱"
+],
+[
+"external ventricular drain",
+"/ɪkˈstɜːrnl venˈtrɪkjələr dreɪn/",
+"脑室外引流",
+"clinical",
+"neurosurgery",
+"EVD，引流脑脊液降颅压"
+],
+[
+"stereotactic biopsy",
+"/ˌsteriəˈtæktɪk ˈbaɪɑːpsi/",
+"立体定向活检",
+"clinical",
+"neurosurgery",
+"三维定位精准取材"
+],
+[
+"deep brain stimulation",
+"/diːp breɪn ˌstɪmjəˈleɪʃən/",
+"脑深部电刺激",
+"clinical",
+"neurosurgery",
+"DBS，帕金森起搏器"
+],
+[
+"gamma knife",
+"/ˈɡæmə naɪf/",
+"伽马刀",
+"clinical",
+"neurosurgery",
+"多束伽马线聚焦照射"
+],
+[
+"cerebrospinal fluid leak",
+"/səˌriːbroʊˈspaɪnl ˈfluːɪd liːk/",
+"脑脊液漏",
+"clinical",
+"neurosurgery",
+"鼻漏或耳漏，防颅内感染"
+],
+[
+"uncal herniation",
+"/ˈʌŋkl ˌhɜːrniˈeɪʃən/",
+"小脑幕切迹疝",
+"clinical",
+"neurosurgery",
+"同侧瞳孔散大，意识恶化"
+],
+[
+"radical nephrectomy",
+"/ˈrædɪkl nəˈfrektəmi/",
+"根治性肾切除",
+"clinical",
+"urology",
+"肾+肾周脂肪+筋膜"
+],
+[
+"radical cystectomy",
+"/ˈrædɪkl sɪˈstektəmi/",
+"根治性膀胱切除",
+"clinical",
+"urology",
+"肌层浸润膀胱癌标准术"
+],
+[
+"ileal conduit",
+"/ˈɪliəl ˈkɑːnduɪt/",
+"回肠膀胱术",
+"clinical",
+"urology",
+"取回肠段作尿流改道"
+],
+[
+"orthotopic neobladder",
+"/ˌɔːrθəˈtɑːpɪk ˈniːoʊblædər/",
+"原位新膀胱",
+"clinical",
+"urology",
+"肠管成形代膀胱"
+],
+[
+"ureteroscopy",
+"/jʊˌriːtəˈrɑːskəpi/",
+"输尿管镜",
+"clinical",
+"urology",
+"直视下碎石取石"
+],
+[
+"percutaneous nephrolithotomy",
+"/ˌpɜːrkjuˈteɪniəs ˌnefroʊlɪˈθɑːtəmi/",
+"经皮肾镜取石",
+"clinical",
+"urology",
+"PCNL，大结石首选"
+],
+[
+"urodynamic study",
+"/ˌjʊroʊdaɪˈnæmɪk ˈstʌdi/",
+"尿动力学检查",
+"clinical",
+"urology",
+"评估储尿与排尿功能"
+],
+[
+"post-void residual",
+"/poʊst vɔɪd rɪˈzɪdʒuəl/",
+"残余尿量",
+"clinical",
+"urology",
+"PVR，排尿后膀胱余尿"
+],
+[
+"clean intermittent catheterization",
+"/kliːn ˌɪntərˈmɪtnt ˌkæθətərɪˈzeɪʃən/",
+"清洁间歇导尿",
+"clinical",
+"urology",
+"CIC，神经源性膀胱常用"
+],
+[
+"suprapubic catheter",
+"/ˌsuːprəˈpjuːbɪk ˈkæθətər/",
+"耻骨上膀胱造瘘管",
+"clinical",
+"urology",
+"经下腹壁置管引流"
+],
+[
+"priapism",
+"/ˈpraɪəpɪzəm/",
+"阴茎异常勃起",
+"clinical",
+"urology",
+"持续勃起，属泌尿急症"
+],
+[
+"neurogenic bladder",
+"/ˌnʊrəˈdʒenɪk ˈblædər/",
+"神经源性膀胱",
+"clinical",
+"urology",
+"神经病变致排尿障碍"
+],
+[
+"malar rash",
+"/ˈmeɪlər ræʃ/",
+"蝶形红斑",
+"clinical",
+"rheum",
+"SLE 双颊对称皮疹"
+],
+[
+"discoid rash",
+"/ˈdɪskɔɪd ræʃ/",
+"盘状红斑",
+"clinical",
+"rheum",
+"disk 盘，瘢痕性皮损"
+],
+[
+"serositis",
+"/ˌsɪrəˈsaɪtɪs/",
+"浆膜炎",
+"clinical",
+"rheum",
+"胸膜或心包炎症"
+],
+[
+"sacroiliitis",
+"/ˌseɪkroʊɪliˈaɪtɪs/",
+"骶髂关节炎",
+"clinical",
+"rheum",
+"强直性脊柱炎首发部位"
+],
+[
+"bamboo spine",
+"/bæmˈbuː spaɪn/",
+"竹节样脊柱",
+"clinical",
+"rheum",
+"韧带骨化，脊柱融合"
+],
+[
+"dactylitis",
+"/ˌdæktɪˈlaɪtɪs/",
+"指趾炎",
+"clinical",
+"rheum",
+"dactyl 指趾，腊肠样肿胀"
+],
+[
+"enthesitis",
+"/ˌenθəˈsaɪtɪs/",
+"附着点炎",
+"clinical",
+"rheum",
+"肌腱韧带附着处炎症"
+],
+[
+"livedo reticularis",
+"/lɪˈviːdoʊ rəˌtɪkjəˈlerɪs/",
+"网状青斑",
+"clinical",
+"rheum",
+"血管炎或抗磷脂综合征"
+],
+[
+"mononeuritis multiplex",
+"/ˌmɑːnoʊnʊˈraɪtɪs ˈmʌltɪpleks/",
+"多发性单神经炎",
+"clinical",
+"rheum",
+"血管炎致神经缺血"
+],
+[
+"heliotrope rash",
+"/ˈhiːliətroʊp ræʃ/",
+"向阳疹",
+"clinical",
+"rheum",
+"皮肌炎眼睑紫红皮疹"
+],
+[
+"gottron papule",
+"/ˈɡɑːtrən ˈpæpjuːl/",
+"Gottron 丘疹",
+"clinical",
+"rheum",
+"指关节伸侧紫红丘疹"
+],
+[
+"primary survey",
+"/ˈpraɪmeri ˈsɜːrveɪ/",
+"初级评估",
+"clinical",
+"emergency",
+"ABCDE 顺序快速筛查"
+],
+[
+"golden hour",
+"/ˈɡoʊldən ˈaʊər/",
+"黄金一小时",
+"clinical",
+"emergency",
+"创伤后 1 小时关键期"
+],
+[
+"damage control resuscitation",
+"/ˈdæmɪdʒ kənˈtroʊl rɪˌsʌsɪˈteɪʃən/",
+"损伤控制复苏",
+"clinical",
+"emergency",
+"止血优先，避免稀释性凝血"
+],
+[
+"massive transfusion protocol",
+"/ˈmæsɪv trænsˈfjuːʒən ˈproʊtəkɔːl/",
+"大量输血方案",
+"clinical",
+"emergency",
+"MTP，平衡比例输注"
+],
+[
+"permissive hypotension",
+"/pərˈmɪsɪv ˌhaɪpoʊˈtensɪv/",
+"允许性低血压",
+"clinical",
+"emergency",
+"出血未控前限制补液"
+],
+[
+"focused assessment with sonography for trauma",
+"/ˈfoʊkəst əˈsesmənt wɪð soʊˈnɑːɡrəfi fɔːr ˈtraʊmə/",
+"创伤重点超声评估",
+"clinical",
+"emergency",
+"FAST，查心包与腹腔积液"
+],
+[
+"pericardiocentesis",
+"/ˌperɪkɑːrdioʊsenˈtiːsɪs/",
+"心包穿刺",
+"clinical",
+"emergency",
+"缓解心脏压塞"
+],
+[
+"tube thoracostomy",
+"/tuːb ˌθɔːrəˈkɑːstəmi/",
+"胸腔闭式引流",
+"clinical",
+"emergency",
+"气胸血胸的引流"
+],
+[
+"crush syndrome",
+"/krʌʃ ˈsɪndroʊm/",
+"挤压综合征",
+"clinical",
+"emergency",
+"横纹肌溶解致急性肾衰"
+],
+[
+"rhabdomyolysis",
+"/ˌræbdoʊmaɪˈɑːlɪsɪs/",
+"横纹肌溶解",
+"clinical",
+"emergency",
+"横纹肌溶解"
+],
+[
+"compartment syndrome",
+"/kəmˈpɑːrtmənt ˈsɪndroʊm/",
+"骨筋膜室综合征",
+"clinical",
+"emergency",
+"室压升高致肌肉神经缺血"
+],
+[
+"chain of infection",
+"/tʃeɪn əv ɪnˈfekʃən/",
+"感染链",
+"clinical",
+"infectious",
+"病原+宿主+传播途径"
+],
+[
+"incubation period",
+"/ˌɪŋkjuˈbeɪʃən ˈpɪriəd/",
+"潜伏期",
+"clinical",
+"infectious",
+"暴露到发病的时间"
+],
+[
+"droplet transmission",
+"/ˈdrɑːplət trænzˈmɪʃən/",
+"飞沫传播",
+"clinical",
+"infectious",
+">5 μm 飞沫，近距离"
+],
+[
+"airborne transmission",
+"/ˈerbɔːrn trænzˈmɪʃən/",
+"空气传播",
+"clinical",
+"infectious",
+"飞沫核<5 μm，需负压"
+],
+[
+"vertical transmission",
+"/ˈvɜːrtɪkl trænzˈmɪʃən/",
+"垂直传播",
+"clinical",
+"infectious",
+"母婴传播"
+],
+[
+"contact tracing",
+"/ˈkɑːntækt ˈtreɪsɪŋ/",
+"接触者追踪",
+"clinical",
+"infectious",
+"找暴露者并隔离观察"
+],
+[
+"notifiable disease",
+"/ˈnoʊtɪfaɪəbl dɪˈziːz/",
+"法定报告传染病",
+"clinical",
+"infectious",
+"需依法上报疾控"
+],
+[
+"source control",
+"/sɔːrs kənˈtroʊl/",
+"感染源控制",
+"clinical",
+"infectious",
+"引流脓肿、清创、拔管"
+],
+[
+"antimicrobial stewardship",
+"/ˌæntimaɪˈkroʊbiəl ˈstuːərdʃɪp/",
+"抗菌药物管理",
+"clinical",
+"infectious",
+"合理用药，遏制耐药"
+],
+[
+"fever of unknown origin",
+"/ˈfiːvər əv ʌnˈnoʊn ˈɔːrɪdʒɪn/",
+"不明原因发热",
+"clinical",
+"infectious",
+"FUO，>3 周未明"
+],
+[
+"preanesthetic evaluation",
+"/ˌpriːænəsˈθetɪk ɪˌvæljuˈeɪʃən/",
+"麻醉前评估",
+"clinical",
+"anesthesia",
+"评估心肺与气道风险"
+],
+[
+"mallampati classification",
+"/ˈmæləmpɑːti ˌklæsɪfɪˈkeɪʃən/",
+"Mallampati 分级",
+"clinical",
+"anesthesia",
+"看咽部结构预测插管难"
+],
+[
+"cormack-lehane grade",
+"/ˈkɔːrmæk ˈleɪhæn ɡreɪd/",
+"Cormack-Lehane 分级",
+"clinical",
+"anesthesia",
+"喉镜下声门暴露分级"
+],
+[
+"laryngeal mask airway",
+"/ləˈrɪndʒiəl mæsk ˈerweɪ/",
+"喉罩",
+"clinical",
+"anesthesia",
+"LMA，不插管的通气管"
+],
+[
+"depolarizing muscle relaxant",
+"/diːˈpoʊləraɪzɪŋ ˈmʌsl rɪˈlæksənt/",
+"去极化肌松药",
+"clinical",
+"anesthesia",
+"如琥珀胆碱"
+],
+[
+"neuromuscular monitoring",
+"/ˌnʊroʊˈmʌskjələr ˈmɑːnɪtərɪŋ/",
+"神经肌肉监测",
+"clinical",
+"anesthesia",
+"TOF 监测肌松恢复"
+],
+[
+"total intravenous anesthesia",
+"/ˈtoʊtl ˌɪntrəˈviːnəs ˌænəsˈθiːʒə/",
+"全凭静脉麻醉",
+"clinical",
+"anesthesia",
+"TIVA，无吸入药"
+],
+[
+"sevoflurane",
+"/ˌsiːvoʊˈflʊreɪn/",
+"七氟烷",
+"clinical",
+"anesthesia",
+"吸入麻醉药，小儿常用"
+],
+[
+"train-of-four",
+"/treɪn əv fɔːr/",
+"四个成串刺激",
+"clinical",
+"anesthesia",
+"TOF，监测肌松恢复"
+],
+[
+"patient-controlled analgesia",
+"/ˈpeɪʃnt kənˈtroʊld ˌænəlˈdʒiːziə/",
+"患者自控镇痛",
+"clinical",
+"anesthesia",
+"PCA，按压给药"
+],
+[
+"laryngospasm",
+"/ləˈrɪŋɡoʊspæzəm/",
+"喉痉挛",
+"clinical",
+"anesthesia",
+"拔管时声带紧闭"
+],
+[
+"meniere disease",
+"/meɪˈnjer dɪˈziːz/",
+"梅尼埃病",
+"clinical",
+"ent",
+"发作性眩晕+耳鸣+听力降"
+],
+[
+"benign paroxysmal positional vertigo",
+"/bɪˈnaɪn ˌpærɑːkˈsɪzməl pəˈzɪʃənl ˈvɜːrtɪɡoʊ/",
+"良性阵发性位置性眩晕",
+"clinical",
+"ent",
+"BPPV，耳石脱落"
+],
+[
+"vestibular neuritis",
+"/veˈstɪbjələr nʊˈraɪtɪs/",
+"前庭神经炎",
+"clinical",
+"ent",
+"持续眩晕无耳聋"
+],
+[
+"dix-hallpike test",
+"/dɪks ˈhɔːlpaɪk test/",
+"Dix-Hallpike 试验",
+"clinical",
+"ent",
+"诱发眼震诊断 BPPV"
+],
+[
+"epley maneuver",
+"/ˈepleɪ məˈnuːvər/",
+"Epley 复位法",
+"clinical",
+"ent",
+"耳石复位手法"
+],
+[
+"pure tone audiometry",
+"/pjʊr toʊn ˌɔːdiˈɑːmətri/",
+"纯音测听",
+"clinical",
+"ent",
+"定量听力损失程度"
+],
+[
+"tympanometry",
+"/ˌtɪmpəˈnɑːmətri/",
+"鼓室压图",
+"clinical",
+"ent",
+"评估中耳压力与积液"
+],
+[
+"sensorineural hearing loss",
+"/ˌsensəˈnʊrəl ˈhɪrɪŋ lɔːs/",
+"感音神经性耳聋",
+"clinical",
+"ent",
+"耳蜗或听神经病变"
+],
+[
+"conductive hearing loss",
+"/kənˈdʌktɪv ˈhɪrɪŋ lɔːs/",
+"传导性耳聋",
+"clinical",
+"ent",
+"外耳中耳传音障碍"
+],
+[
+"peritonsillar abscess",
+"/ˌperɪˈtɑːnsɪlər ˈæbses/",
+"扁桃体周围脓肿",
+"clinical",
+"ent",
+"张口困难、悬雍垂偏移"
+],
+[
+"cholesteatoma",
+"/kəˌlestəˈtoʊmə/",
+"胆脂瘤",
+"clinical",
+"ent",
+"角化上皮堆积，破坏骨质"
+],
+[
+"slit lamp examination",
+"/slɪt læmp ɪɡˌzæmɪˈneɪʃən/",
+"裂隙灯检查",
+"clinical",
+"opht",
+"眼前节与晶状体检查"
+],
+[
+"fundoscopy",
+"/fʌnˈdɑːskəpi/",
+"眼底检查",
+"clinical",
+"opht",
+"看视网膜与视盘"
+],
+[
+"tonometry",
+"/təˈnɑːmətri/",
+"眼压测量",
+"clinical",
+"opht",
+"青光眼筛查关键"
+],
+[
+"optical coherence tomography",
+"/ˈɑːptɪkl koʊˈhɪrəns təˈmɑːɡrəfi/",
+"光学相干断层扫描",
+"clinical",
+"opht",
+"OCT，查黄斑与视网膜层"
+],
+[
+"indocyanine green angiography",
+"/ˌɪndoʊˈsaɪəniːn ɡriːn ˌændʒiˈɑːɡrəfi/",
+"吲哚菁绿造影",
+"clinical",
+"opht",
+"ICGA，看脉络膜"
+],
+[
+"relative afferent pupillary defect",
+"/ˈrelətɪv ˈæfərənt pjʊˈpɪləri ˈdiːfekt/",
+"相对性传入性瞳孔障碍",
+"clinical",
+"opht",
+"RAPD，视神经病变标志"
+],
+[
+"hyphema",
+"/haɪˈfiːmə/",
+"前房积血",
+"clinical",
+"opht",
+"血在前房，外伤常见"
+],
+[
+"chalazion",
+"/kəˈleɪziən/",
+"霰粒肿",
+"clinical",
+"opht",
+"睑板腺慢性肉芽肿"
+],
+[
+"hordeolum",
+"/hɔːrˈdiːələm/",
+"麦粒肿",
+"clinical",
+"opht",
+"睫毛腺急性化脓"
+],
+[
+"strabismus",
+"/strəˈbɪzməs/",
+"斜视",
+"clinical",
+"opht",
+"双眼视轴不平行"
+],
+[
+"central retinal artery occlusion",
+"/ˈsentrəl ˈretɪnl ˈɑːrtəri əˈkluːʒən/",
+"视网膜中央动脉阻塞",
+"clinical",
+"opht",
+"突发无痛性单眼失明"
+],
+[
+"papilledema",
+"/ˌpæpɪləˈdiːmə/",
+"视乳头水肿",
+"clinical",
+"opht",
+"颅压升高的重要体征"
+],
+[
+"mental status examination",
+"/ˈmentl ˈsteɪtəs ɪɡˌzæmɪˈneɪʃən/",
+"精神检查",
+"clinical",
+"psych",
+"MSE，系统评估精神状态"
+],
+[
+"hallucination",
+"/həˌluːsɪˈneɪʃən/",
+"幻觉",
+"clinical",
+"psych",
+"无客观刺激的感知"
+],
+[
+"delusion",
+"/dɪˈluːʒən/",
+"妄想",
+"clinical",
+"psych",
+"坚信错误信念不可纠正"
+],
+[
+"thought disorder",
+"/θɔːt dɪsˈɔːrdər/",
+"思维障碍",
+"clinical",
+"psych",
+"思维形式或内容异常"
+],
+[
+"flight of ideas",
+"/flaɪt əv aɪˈdiːəz/",
+"思维奔逸",
+"clinical",
+"psych",
+"躁狂时话题快速跳转"
+],
+[
+"anhedonia",
+"/ˌænhiˈdoʊniə/",
+"快感缺失",
+"clinical",
+"psych",
+"an- 无+快乐"
+],
+[
+"avolition",
+"/ˌeɪvəˈlɪʃən/",
+"意志减退",
+"clinical",
+"psych",
+"精神分裂症阴性症状"
+],
+[
+"suicidal ideation",
+"/ˌsuːɪˈsaɪdl ˌaɪdiˈeɪʃən/",
+"自杀意念",
+"clinical",
+"psych",
+"需立即评估风险"
+],
+[
+"tardive dyskinesia",
+"/ˈtɑːrdɪv ˌdɪskɪˈniːʒə/",
+"迟发性运动障碍",
+"clinical",
+"psych",
+"长期抗精神病药致口面抽动"
+],
+[
+"electroconvulsive therapy",
+"/ɪˌlektroʊkənˈvʌlsɪv ˈθerəpi/",
+"电休克治疗",
+"clinical",
+"psych",
+"ECT，难治性抑郁有效"
+],
+[
+"cognitive behavioral therapy",
+"/ˈkɑːɡnətɪv bɪˈheɪvjərəl ˈθerəpi/",
+"认知行为治疗",
+"clinical",
+"psych",
+"CBT，改变认知与行为"
+],
+[
+"gravidity",
+"/ɡrəˈvɪdəti/",
+"妊娠次数",
+"clinical",
+"obgyn",
+"G，含本次全部妊娠"
+],
+[
+"parity",
+"/ˈpærəti/",
+"产次",
+"clinical",
+"obgyn",
+"P，≥20 周分娩次数"
+],
+[
+"molar pregnancy",
+"/ˈmoʊlər ˈpreɡnənsi/",
+"葡萄胎",
+"clinical",
+"obgyn",
+"滋养细胞增生，hCG 极高"
+],
+[
+"vasa previa",
+"/ˈveɪsə ˈpriːviə/",
+"前置血管",
+"clinical",
+"obgyn",
+"脐血管跨宫颈内口"
+],
+[
+"uterine rupture",
+"/ˈjuːtəraɪn ˈrʌptʃər/",
+"子宫破裂",
+"clinical",
+"obgyn",
+"瘢痕子宫试产风险"
+],
+[
+"premature rupture of membranes",
+"/ˌpriːməˈtʃʊr rʌptʃər əv ˈmembreɪnz/",
+"胎膜早破",
+"clinical",
+"obgyn",
+"PROM，破膜后感染风险升"
+],
+[
+"postpartum hemorrhage",
+"/ˌpoʊstˈpɑːrtəm ˈhemərɪdʒ/",
+"产后出血",
+"clinical",
+"obgyn",
+"产后 24h 出血"
+],
+[
+"shoulder dystocia",
+"/ˈʃoʊldər dɪsˈtoʊʃə/",
+"肩难产",
+"clinical",
+"obgyn",
+"前肩嵌顿，需 McRoberts"
+],
+[
+"hyperemesis gravidarum",
+"/ˌhaɪpərˈeməsɪs ˌɡrævɪˈderəm/",
+"妊娠剧吐",
+"clinical",
+"obgyn",
+"严重呕吐致脱水酮症"
+],
+[
+"hellp syndrome",
+"/help ˈsɪndroʊm/",
+"HELLP 综合征",
+"clinical",
+"obgyn",
+"溶血+肝酶升+血小板低"
+],
+[
+"cervical cerclage",
+"/ˈsɜːrvɪkl sərˈklɑːʒ/",
+"宫颈环扎术",
+"clinical",
+"obgyn",
+"宫颈机能不全者保胎"
+],
+[
+"dilation and curettage",
+"/ˌdaɪˈleɪʃən ənd ˌkjʊrəˈtɑːʒ/",
+"刮宫术",
+"clinical",
+"obgyn",
+"D&C，清宫或诊断"
+],
+[
+"streptococcus bovis",
+"/ˌstreptəˈkɑːkəs ˈboʊvɪs/",
+"牛链球菌",
+"micro",
+"gram_pos",
+"菌血症常提示结肠癌"
+],
+[
+"streptococcus gallolyticus",
+"/ˌstreptəˈkɑːkəs ˌɡæloʊˈlɪtɪkəs/",
+"解没食子酸链球菌",
+"micro",
+"gram_pos",
+"原牛链球菌生物型 I"
+],
+[
+"enterococcus faecium",
+"/ˌentəroʊˈkɑːkəs ˈfiːʃiəm/",
+"屎肠球菌",
+"micro",
+"gram_pos",
+"VRE 主要菌种，耐药性强"
+],
+[
+"staphylococcus lugdunensis",
+"/ˌstæfɪloʊˈkɑːkəs ˌlʌɡdəˈnensɪs/",
+"路邓葡萄球菌",
+"micro",
+"gram_pos",
+"凝固酶阴性但毒力近金葡"
+],
+[
+"corynebacterium jeikeium",
+"/kəˌraɪnəbækˈtɪriəm dʒaɪˈkiːiəm/",
+"杰氏棒状杆菌",
+"micro",
+"gram_pos",
+"免疫抑制者导管相关感染"
+],
+[
+"bacillus subtilis",
+"/bəˈsɪləs səbˈtɪlɪs/",
+"枯草芽孢杆菌",
+"micro",
+"gram_pos",
+"常见污染菌，产芽孢"
+],
+[
+"erysipelothrix rhusiopathiae",
+"/ˌerɪˈsɪpəloʊθrɪks ˌruːsioʊˈpæθiiː/",
+"猪红斑丹毒丝菌",
+"micro",
+"gram_pos",
+"接触猪鱼致类丹毒"
+],
+[
+"rothia mucilaginosa",
+"/ˈroʊθiə ˌmjuːsɪlædʒɪˈnoʊsə/",
+"黏滑罗氏菌",
+"micro",
+"gram_pos",
+"口腔菌，心内膜炎机会致病"
+],
+[
+"abiotrophia defectiva",
+"/ˌeɪbaɪəˈtroʊfiə dɪˈfektɪvə/",
+"缺陷乏养菌",
+"micro",
+"gram_pos",
+"需吡哆醇，培养阴性心内膜炎"
+],
+[
+"granulicatella adiacens",
+"/ˌɡrænjəlɪkəˈtelə ˈædiəsenz/",
+"毗邻颗粒链菌",
+"micro",
+"gram_pos",
+"营养变异型链球菌"
+],
+[
+"nocardia asteroides",
+"/noʊˈkɑːrdiə ˌæstəˈrɔɪdiːz/",
+"星形诺卡菌",
+"micro",
+"gram_pos",
+"弱革兰阳性，分支丝状"
+],
+[
+"klebsiella oxytoca",
+"/ˌklebsiˈelə ˌɑːksɪˈtoʊkə/",
+"产酸克雷伯菌",
+"micro",
+"gram_neg",
+"抗生素相关出血性肠炎"
+],
+[
+"serratia marcescens",
+"/səˈreɪʃə mɑːrˈsesenz/",
+"黏质沙雷菌",
+"micro",
+"gram_neg",
+"红色色素，医院感染"
+],
+[
+"proteus vulgaris",
+"/ˈproʊtiəs vʌlˈɡerɪs/",
+"普通变形杆菌",
+"micro",
+"gram_neg",
+"迁徙生长，产尿素酶"
+],
+[
+"morganella morganii",
+"/ˌmɔːrɡəˈnelə mɔːrˈɡæniaɪ/",
+"摩根摩根菌",
+"micro",
+"gram_neg",
+"泌尿道与伤口感染"
+],
+[
+"providencia stuartii",
+"/ˌproʊvɪˈdensʃə stuˈɑːrtiaɪ/",
+"斯氏普罗威登斯菌",
+"micro",
+"gram_neg",
+"长期导尿者感染"
+],
+[
+"salmonella paratyphi",
+"/ˌsælməˈnelə ˌpærəˈtaɪfaɪ/",
+"副伤寒沙门菌",
+"micro",
+"gram_neg",
+"类伤寒，症状较轻"
+],
+[
+"shigella flexneri",
+"/ʃɪˈɡelə ˈfleksnəraɪ/",
+"福氏志贺菌",
+"micro",
+"gram_neg",
+"发展中国家痢疾主因"
+],
+[
+"vibrio vulnificus",
+"/ˈvɪbrioʊ vʌlˈnɪfɪkəs/",
+"创伤弧菌",
+"micro",
+"gram_neg",
+"生蚝+肝病，快速败血症"
+],
+[
+"yersinia enterocolitica",
+"/jərˈsɪniə ˌentəroʊkəˈlɪtɪkə/",
+"小肠结肠炎耶尔森菌",
+"micro",
+"gram_neg",
+"假阑尾炎，冷增菌"
+],
+[
+"haemophilus ducreyi",
+"/hiːˈmɑːfɪləs duːˈkreɪaɪ/",
+"杜克雷嗜血杆菌",
+"micro",
+"gram_neg",
+"软下疳，疼痛性溃疡"
+],
+[
+"burkholderia pseudomallei",
+"/ˌbɜːrkhoʊlˈdɪriə ˌsuːdoʊməˈlaɪaɪ/",
+"类鼻疽伯克霍尔德菌",
+"micro",
+"gram_neg",
+"东南亚，糖尿病者易感"
+],
+[
+"prevotella melaninogenica",
+"/ˌprevəˈtelə ˌmelənɪnoʊˈdʒenɪkə/",
+"产黑普雷沃菌",
+"micro",
+"anaerobe",
+"口腔厌氧菌，产黑色素"
+],
+[
+"porphyromonas gingivalis",
+"/ˌpɔːrfɪˈrɑːmənəs ˌdʒɪndʒɪˈveɪlɪs/",
+"牙龈卟啉单胞菌",
+"micro",
+"anaerobe",
+"牙周炎主要致病菌"
+],
+[
+"fusobacterium nucleatum",
+"/ˌfjuːzoʊbækˈtɪriəm ˌnuːkliˈeɪtəm/",
+"具核梭杆菌",
+"micro",
+"anaerobe",
+"口腔菌，与结直肠癌相关"
+],
+[
+"clostridium septicum",
+"/klɑːˈstrɪdiəm ˈseptɪkəm/",
+"败毒梭菌",
+"micro",
+"anaerobe",
+"自发性气性坏疽，伴肠癌"
+],
+[
+"clostridium sordellii",
+"/klɑːˈstrɪdiəm sɔːrˈdelaɪ/",
+"索氏梭菌",
+"micro",
+"anaerobe",
+"中毒性休克样表现"
+],
+[
+"veillonella parvula",
+"/ˌveɪəˈnelə ˈpɑːrvjələ/",
+"小韦荣球菌",
+"micro",
+"anaerobe",
+"口腔正常菌，厌氧革兰阴性球"
+],
+[
+"finegoldia magna",
+"/faɪˈneɪɡoʊldiə ˈmæɡnə/",
+"大芬戈尔德菌",
+"micro",
+"anaerobe",
+"原消化链球菌大株"
+],
+[
+"cutibacterium acnes",
+"/ˌkjuːtibækˈtɪriəm ˈækniːz/",
+"痤疮丙酸杆菌",
+"micro",
+"anaerobe",
+"痤疮与植入物感染"
+],
+[
+"bacteroides thetaiotaomicron",
+"/ˌbæktəroʊˈaɪdiːz ˌθetəˌaɪoʊtəˈmaɪkrɑːn/",
+"多形拟杆菌",
+"micro",
+"anaerobe",
+"肠道优势菌，多糖代谢"
+],
+[
+"eggerthella lenta",
+"/ˌeɡərˈθelə ˈlentə/",
+"缓慢埃格特菌",
+"micro",
+"anaerobe",
+"厌氧菌血症，生长缓慢"
+],
+[
+"mycobacterium bovis",
+"/ˌmaɪkoʊbækˈtɪriəm ˈboʊvɪs/",
+"牛分枝杆菌",
+"micro",
+"mycobacteria",
+"未消毒奶传播，BCG 来源"
+],
+[
+"mycobacterium marinum",
+"/ˌmaɪkoʊbækˈtɪriəm məˈrɪnəm/",
+"海分枝杆菌",
+"micro",
+"mycobacteria",
+"鱼缸肉芽肿，游泳者结节"
+],
+[
+"mycobacterium kansasii",
+"/ˌmaɪkoʊbækˈtɪriəm kænˈzæsiaɪ/",
+"堪萨斯分枝杆菌",
+"micro",
+"mycobacteria",
+"光产色，类结核肺病"
+],
+[
+"mycobacterium abscessus",
+"/ˌmaɪkoʊbækˈtɪriəm æbˈsesəs/",
+"脓肿分枝杆菌",
+"micro",
+"mycobacteria",
+"快速生长，多重耐药"
+],
+[
+"mycobacterium scrofulaceum",
+"/ˌmaɪkoʊbækˈtɪriəm skrɑːfjʊˈleɪsiəm/",
+"瘰疬分枝杆菌",
+"micro",
+"mycobacteria",
+"儿童颈部淋巴结炎"
+],
+[
+"mycobacterium ulcerans",
+"/ˌmaɪkoʊbækˈtɪriəm ˈʌlsərənz/",
+"溃疡分枝杆菌",
+"micro",
+"mycobacteria",
+"产霉酚内酯致 Buruli 溃疡"
+],
+[
+"tuberculoid leprosy",
+"/tjuːˈbɜːrkjəlɔɪd ˈleprəsi/",
+"结核样型麻风",
+"micro",
+"mycobacteria",
+"Th1 反应强，少菌型"
+],
+[
+"lepromatous leprosy",
+"/leˈprɑːmətəs ˈleprəsi/",
+"瘤型麻风",
+"micro",
+"mycobacteria",
+"Th2 反应，多菌型，面容毁损"
+],
+[
+"ranke complex",
+"/ˈræŋkə ˈkɑːmpleks/",
+"兰克复合体",
+"micro",
+"mycobacteria",
+"原发灶+淋巴管炎+淋巴结"
+],
+[
+"pott disease",
+"/pɑːt dɪˈziːz/",
+"波特病",
+"micro",
+"mycobacteria",
+"脊柱结核，椎体破坏后凸"
+],
+[
+"borrelia recurrentis",
+"/bəˈreliə rɪˈkɜːrəntɪs/",
+"回归热疏螺旋体",
+"micro",
+"spirochete",
+"虱媒回归热，抗原变异"
+],
+[
+"rickettsia prowazekii",
+"/rɪˈketsiə ˌproʊvəˈzekiaɪ/",
+"普氏立克次体",
+"micro",
+"spirochete",
+"流行性斑疹伤寒，虱媒"
+],
+[
+"rickettsia typhi",
+"/rɪˈketsiə ˈtaɪfaɪ/",
+"斑疹伤寒立克次体",
+"micro",
+"spirochete",
+"地方性斑疹伤寒，蚤媒"
+],
+[
+"orientia tsutsugamushi",
+"/ˌɔːriˈenʃə ˌtsuːtsuːɡɑːˈmuːʃi/",
+"恙虫病东方体",
+"micro",
+"spirochete",
+"恙螨叮咬，焦痂"
+],
+[
+"ehrlichia chaffeensis",
+"/erˈlɪkiə ˌʃæfiːˈensɪs/",
+"查菲埃立克体",
+"micro",
+"spirochete",
+"人单核细胞埃立克体病"
+],
+[
+"anaplasma phagocytophilum",
+"/ˌænəˈplæzmə ˌfæɡoʊsaɪˈtɑːfɪləm/",
+"嗜吞噬细胞无形体",
+"micro",
+"spirochete",
+"蜱媒，中性粒细胞内包涵体"
+],
+[
+"bartonella henselae",
+"/ˌbɑːrtəˈnelə ˈhensəliː/",
+"汉赛巴尔通体",
+"micro",
+"spirochete",
+"猫抓病，猫为宿主"
+],
+[
+"erythema migrans",
+"/ˌerɪˈθiːmə ˈmaɪɡrənz/",
+"游走性红斑",
+"micro",
+"spirochete",
+"莱姆病特征性皮疹"
+],
+[
+"chancre",
+"/ˈʃæŋkər/",
+"硬下疳",
+"micro",
+"spirochete",
+"梅毒一期无痛性溃疡"
+],
+[
+"fatal familial insomnia",
+"/ˈfeɪtl fəˈmɪliəl ɪnˈsɑːmniə/",
+"致死性家族性失眠",
+"micro",
+"prion",
+"D178N 突变，丘脑受累"
+],
+[
+"sporadic cjd",
+"/spəˈrædɪk ˌsiːdʒeɪˈdiː/",
+"散发性克雅病",
+"micro",
+"prion",
+"占克雅病约 85%"
+],
+[
+"iatrogenic cjd",
+"/aɪˌætrəˈdʒenɪk ˌsiːdʒeɪˈdiː/",
+"医源性克雅病",
+"micro",
+"prion",
+"器械或移植物传播"
+],
+[
+"prnp gene",
+"/ˌpiː ɑːr ˌen ˈpiː dʒiːn/",
+"PRNP 基因",
+"micro",
+"prion",
+"编码朊蛋白，位于 20 号染色体"
+],
+[
+"proteinase k resistance",
+"/ˈproʊtiːneɪs keɪ rɪˈzɪstəns/",
+"蛋白酶 K 抵抗",
+"micro",
+"prion",
+"PrPsc 的核心特征"
+],
+[
+"florid plaque",
+"/ˈflɔːrɪd plæk/",
+"花斑状斑块",
+"micro",
+"prion",
+"变异型克雅病脑内沉积"
+],
+[
+"codon 129 polymorphism",
+"/ˈkoʊdɑːn wʌn ˈtwenti naɪn ˌpɑːliˈmɔːrfɪzəm/",
+"129 位密码子多态性",
+"micro",
+"prion",
+"甲硫/缬氨酸影响易感性"
+],
+[
+"ventilator bundle",
+"/ˈventɪleɪtər ˈbʌndl/",
+"呼吸机集束化措施",
+"micro",
+"nosocomial",
+"抬床头、口腔护理等组合"
+],
+[
+"central line bundle",
+"/ˈsentrəl laɪn ˈbʌndl/",
+"中心静脉导管集束化",
+"micro",
+"nosocomial",
+"手卫生、最大无菌屏障"
+],
+[
+"multidrug-resistant organism",
+"/ˌmʌltiˈdrʌɡ rɪˈzɪstənt ˈɔːrɡənɪzəm/",
+"多重耐药菌",
+"micro",
+"nosocomial",
+"MDRO，需接触隔离"
+],
+[
+"infection control bundle",
+"/ɪnˈfekʃən kənˈtroʊl ˈbʌndl/",
+"感染控制集束",
+"micro",
+"nosocomial",
+"多项措施组合执行"
+],
+[
+"airborne precautions",
+"/ˈerbɔːrn prɪˈkɔːʃənz/",
+"空气隔离",
+"micro",
+"nosocomial",
+"结核麻疹，需负压病房"
+],
+[
+"droplet precautions",
+"/ˈdrɑːplət prɪˈkɔːʃənz/",
+"飞沫隔离",
+"micro",
+"nosocomial",
+"流感百日咳，外科口罩"
+],
+[
+"standard precautions",
+"/ˈstændərd prɪˈkɔːʃənz/",
+"标准预防",
+"micro",
+"nosocomial",
+"所有病人均按有传染性处理"
+],
+[
+"needlestick injury",
+"/ˈniːdlstɪk ˈɪndʒəri/",
+"针刺伤",
+"micro",
+"nosocomial",
+"血源性病原体职业暴露"
+],
+[
+"surveillance culture",
+"/sərˈveɪləns ˈkʌltʃər/",
+"监测培养",
+"micro",
+"nosocomial",
+"入 ICU 筛查耐药菌定植"
+],
+[
+"penicillinase",
+"/ˌpenɪˈsɪləneɪs/",
+"青霉素酶",
+"micro",
+"resistance",
+"水解青霉素 β-内酰胺环"
+],
+[
+"carbapenemase",
+"/ˌkɑːrbəˈpenəmeɪs/",
+"碳青霉烯酶",
+"micro",
+"resistance",
+"水解碳青霉烯类"
+],
+[
+"klebsiella pneumoniae carbapenemase",
+"/ˌklebsiˈelə nuːˈmoʊniaɪ ˌkɑːrbəˈpenəmeɪs/",
+"碳青霉烯酶类",
+"micro",
+"resistance",
+"肺炎克雷伯菌产的碳青霉烯酶"
+],
+[
+"ndm-1",
+"/ˌen diː ˈem wʌn/",
+"NDM-1 金属酶",
+"micro",
+"resistance",
+"新德里金属 β-内酰胺酶"
+],
+[
+"meca gene",
+"/ˈmekə dʒiːn/",
+"mecA 基因",
+"micro",
+"resistance",
+"编码 PBP2a，介导 MRSA"
+],
+[
+"pbp2a",
+"/ˌpiː biː ˈpiː tuː eɪ/",
+"青霉素结合蛋白 2a",
+"micro",
+"resistance",
+"低亲和力，β-内酰胺失效"
+],
+[
+"porin loss",
+"/ˈpɔːrɪn lɔːs/",
+"孔蛋白丢失",
+"micro",
+"resistance",
+"外膜通透性下降致耐药"
+],
+[
+"horizontal gene transfer",
+"/ˌhɔːrɪˈzɑːntl dʒiːn ˈtrænsfər/",
+"水平基因转移",
+"micro",
+"resistance",
+"非亲子间传递耐药基因"
+],
+[
+"transposon",
+"/trænsˈpoʊzɑːn/",
+"转座子",
+"micro",
+"resistance",
+"可在基因组内跳跃的 DNA"
+],
+[
+"conjugation",
+"/ˌkɑːndʒəˈɡeɪʃən/",
+"接合",
+"micro",
+"resistance",
+"经性菌毛传递质粒"
+],
+[
+"antibiogram",
+"/ˌæntiˈbaɪəɡræm/",
+"抗菌药物敏感性谱",
+"micro",
+"resistance",
+"指导经验性用药"
+],
+[
+"disk diffusion",
+"/dɪsk dɪˈfjuːʒən/",
+"纸片扩散法",
+"micro",
+"resistance",
+"Kirby-Bauer 法测药敏"
+],
+[
+"ethylene oxide sterilization",
+"/ˈeθəliːn ˈɑːksaɪd ˌsterələˈzeɪʃən/",
+"环氧乙烷灭菌",
+"micro",
+"control",
+"低温灭菌，适用于内镜"
+],
+[
+"gamma irradiation",
+"/ˈɡæmə ɪˌreɪdiˈeɪʃən/",
+"伽马射线辐照",
+"micro",
+"control",
+"一次性耗材批量灭菌"
+],
+[
+"hepa filter",
+"/ˈhepə ˈfɪltər/",
+"高效空气过滤器",
+"micro",
+"control",
+"滤除 0.3 μm 颗粒"
+],
+[
+"biosafety cabinet",
+"/ˌbaɪoʊˈseɪfti ˈkæbɪnət/",
+"生物安全柜",
+"micro",
+"control",
+"操作病原时的负压柜"
+],
+[
+"chlorhexidine",
+"/klɔːrˈheksɪdiːn/",
+"氯己定",
+"micro",
+"control",
+"皮肤消毒，广谱持久"
+],
+[
+"povidone-iodine",
+"/ˈpoʊvɪdoʊn ˈaɪədaɪn/",
+"聚维酮碘",
+"micro",
+"control",
+"碘伏，术前皮肤消毒"
+],
+[
+"glutaraldehyde",
+"/ˌɡluːtəˈrældɪhaɪd/",
+"戊二醛",
+"micro",
+"control",
+"内镜高水平消毒"
+],
+[
+"blood agar",
+"/blʌd ˈeɪɡɑːr/",
+"血琼脂",
+"micro",
+"control",
+"观察溶血，培养苛养菌"
+],
+[
+"macconkey agar",
+"/məˈkɑːnki ˈeɪɡɑːr/",
+"麦康凯琼脂",
+"micro",
+"control",
+"选革兰阴性，乳糖发酵变色"
+],
+[
+"lowenstein-jensen medium",
+"/ˈloʊənstaɪn ˈjensən ˈmiːdiəm/",
+"罗氏培养基",
+"micro",
+"control",
+"结核分枝杆菌经典培养"
+],
+[
+"catalase test",
+"/ˈkætəleɪs test/",
+"过氧化氢酶试验",
+"micro",
+"control",
+"葡萄球菌阳性，链球菌阴性"
+],
+[
+"secretory iga",
+"/sɪˈkriːtəri ˌaɪ dʒiː ˈeɪ/",
+"分泌型 IgA",
+"immuno",
+"antibody",
+"二聚体，黏膜局部免疫"
+],
+[
+"j chain",
+"/dʒeɪ tʃeɪn/",
+"连接链",
+"immuno",
+"antibody",
+"连接 IgA/IgM 单体的多肽"
+],
+[
+"secretory component",
+"/sɪˈkriːtəri kəmˈpoʊnənt/",
+"分泌片",
+"immuno",
+"antibody",
+"保护 IgA 免受蛋白酶降解"
+],
+[
+"fc receptor",
+"/ˌef ˈsiː rɪˈseptər/",
+"Fc 受体",
+"immuno",
+"antibody",
+"识别抗体 Fc 段，介效应"
+],
+[
+"neonatal fc receptor",
+"/ˌniːoʊˈneɪtl ˌef ˈsiː rɪˈseptər/",
+"新生儿 Fc 受体",
+"immuno",
+"antibody",
+"FcRn 转运 IgG"
+],
+[
+"c1q",
+"/ˌsiː wʌn ˈkjuː/",
+"补体 C1q",
+"immuno",
+"antibody",
+"识别 Fc 启动经典途径"
+],
+[
+"c3b",
+"/ˌsiː θriː ˈbiː/",
+"补体 C3b",
+"immuno",
+"antibody",
+"调理素，参与 C3 转化酶"
+],
+[
+"factor h",
+"/ˈfæktər eɪtʃ/",
+"补体 H 因子",
+"immuno",
+"antibody",
+"抑制旁路途径，保护自身细胞"
+],
+[
+"decay accelerating factor",
+"/dɪˈkeɪ ækˈseləreɪtɪŋ ˈfæktər/",
+"衰变加速因子",
+"immuno",
+"antibody",
+"CD55，解离 C3 转化酶"
+],
+[
+"cd59",
+"/ˌsiː diː ˈfɪfti naɪn/",
+"补体调节蛋白",
+"immuno",
+"antibody",
+"阻止膜攻击复合物形成"
+],
+[
+"anaphylatoxin",
+"/ˌænəfɪləˈtɑːksɪn/",
+"过敏毒素",
+"immuno",
+"antibody",
+"C3a/C5a，促肥大细胞脱颗粒"
+],
+[
+"properdin",
+"/ˈprɑːpərdɪn/",
+"备解素",
+"immuno",
+"antibody",
+"稳定旁路途径 C3 转化酶"
+],
+[
+"interleukin-4",
+"/ˌɪntərˈluːkɪn fɔːr/",
+"白细胞介素-4",
+"immuno",
+"cytokine",
+"促 Th2 与 IgE"
+],
+[
+"interleukin-5",
+"/ˌɪntərˈluːkɪn faɪv/",
+"白细胞介素-5",
+"immuno",
+"cytokine",
+"嗜酸性粒细胞生长因子"
+],
+[
+"interleukin-13",
+"/ˌɪntərˈluːkɪn ˈθɜːrtiːn/",
+"白细胞介素-13",
+"immuno",
+"cytokine",
+"促黏液分泌与气道高反应"
+],
+[
+"interleukin-17",
+"/ˌɪntərˈluːkɪn ˈsevəntiːn/",
+"白细胞介素-17",
+"immuno",
+"cytokine",
+"Th17 分泌，招募中性粒细胞"
+],
+[
+"interleukin-23",
+"/ˌɪntərˈluːkɪn ˈtwenti θriː/",
+"白细胞介素-23",
+"immuno",
+"cytokine",
+"维持 Th17，银屑病靶点"
+],
+[
+"interferon alpha",
+"/ˌɪntərˈfɪrɑːn ˈælfə/",
+"干扰素 α",
+"immuno",
+"cytokine",
+"抗病毒，治乙肝与白血病"
+],
+[
+"interferon beta",
+"/ˌɪntərˈfɪrɑːn ˈbeɪtə/",
+"干扰素 β",
+"immuno",
+"cytokine",
+"多发性硬化一线用药"
+],
+[
+"granulocyte colony-stimulating factor",
+"/ˈɡrænjəloʊsaɪt ˈkɑːləni ˈstɪmjəleɪtɪŋ ˈfæktər/",
+"粒细胞集落刺激因子",
+"immuno",
+"cytokine",
+"G-CSF，升中性粒细胞"
+],
+[
+"jak-stat pathway",
+"/dʒæk stæt ˈpæθweɪ/",
+"JAK-STAT 通路",
+"immuno",
+"cytokine",
+"细胞因子受体下游核心通路"
+],
+[
+"inflammasome",
+"/ɪnˈflæməsɑːm/",
+"炎症小体",
+"immuno",
+"cytokine",
+"激活 IL-1β"
+],
+[
+"cytokine release syndrome",
+"/ˈsaɪtəkaɪn rɪˈliːs ˈsɪndroʊm/",
+"细胞因子释放综合征",
+"immuno",
+"cytokine",
+"CAR-T 治疗后高热低血压"
+],
+[
+"foxp3",
+"/fɑːks ˈpiː θriː/",
+"Treg 转录因子",
+"immuno",
+"tolerance",
+"Treg 关键转录因子"
+],
+[
+"immune privilege",
+"/ɪˈmjuːn ˈprɪvəlɪdʒ/",
+"免疫豁免",
+"immuno",
+"tolerance",
+"眼、脑、睾丸等豁免部位"
+],
+[
+"oral tolerance",
+"/ˈɔːrəl ˈtɑːlərəns/",
+"口服耐受",
+"immuno",
+"tolerance",
+"口服抗原诱导全身低反应"
+],
+[
+"activation-induced cell death",
+"/ˌæktɪˈveɪʃən ɪnˈduːst sel deθ/",
+"活化诱导细胞死亡",
+"immuno",
+"tolerance",
+"AICD，清除反复活化 T 细胞"
+],
+[
+"receptor editing",
+"/rɪˈseptər ˈedɪtɪŋ/",
+"受体编辑",
+"immuno",
+"tolerance",
+"重排轻链挽救自身反应 B 细胞"
+],
+[
+"peripheral deletion",
+"/pəˈrɪfərəl dɪˈliːʃən/",
+"外周删除",
+"immuno",
+"tolerance",
+"外周清除自身反应淋巴细胞"
+],
+[
+"clonal ignorance",
+"/ˈkloʊnl ˈɪɡnərəns/",
+"克隆忽视",
+"immuno",
+"tolerance",
+"自身抗原被隔离，未接触"
+],
+[
+"low zone tolerance",
+"/loʊ zoʊn ˈtɑːlərəns/",
+"低带耐受",
+"immuno",
+"tolerance",
+"低剂量抗原诱导耐受"
+],
+[
+"high zone tolerance",
+"/haɪ zoʊn ˈtɑːlərəns/",
+"高带耐受",
+"immuno",
+"tolerance",
+"高剂量抗原致克隆清除"
+],
+[
+"bystander suppression",
+"/ˈbaɪstændər səˈpreʃən/",
+"旁观者抑制",
+"immuno",
+"tolerance",
+"Treg 抑制邻近无关反应"
+],
+[
+"tumor microenvironment",
+"/ˈtuːmər ˌmaɪkroʊɪnˈvaɪrənmənt/",
+"肿瘤微环境",
+"immuno",
+"tumor",
+"TME，免疫抑制性细胞与因子"
+],
+[
+"myeloid-derived suppressor cell",
+"/ˈmaɪəlɔɪd dɪˈraɪvd səˈpresər sel/",
+"髓系来源抑制细胞",
+"immuno",
+"tumor",
+"MDSC，抑制 T 细胞功能"
+],
+[
+"tumor-associated macrophage",
+"/ˈtuːmər əˈsoʊsieɪtɪd ˈmækrəfeɪdʒ/",
+"肿瘤相关巨噬细胞",
+"immuno",
+"tumor",
+"TAM，多为 M2 促瘤表型"
+],
+[
+"antibody-dependent cellular cytotoxicity",
+"/ˈæntɪbɑːdi dɪˈpendənt ˈseljələr ˌsaɪtoʊtɑːkˈsɪsəti/",
+"抗体依赖细胞毒作用",
+"immuno",
+"tumor",
+"ADCC 杀伤机制"
+],
+[
+"neoantigen",
+"/ˌniːoʊˈæntɪdʒən/",
+"新抗原",
+"immuno",
+"tumor",
+"突变产生，肿瘤特异"
+],
+[
+"tumor mutational burden",
+"/ˈtuːmər ˌmjuːˈteɪʃənl ˈbɜːrdn/",
+"肿瘤突变负荷",
+"immuno",
+"tumor",
+"TMB，预测免疫治疗反应"
+],
+[
+"mismatch repair deficiency",
+"/ˈmɪsmætʃ rɪˈper dɪˈfɪʃənsi/",
+"错配修复缺陷",
+"immuno",
+"tumor",
+"dMMR，MSI-H 相关"
+],
+[
+"immunoediting",
+"/ˌɪmjənoʊˈedɪtɪŋ/",
+"免疫编辑",
+"immuno",
+"tumor",
+"清除-平衡-逃逸三阶段"
+],
+[
+"bispecific t cell engager",
+"/ˌbaɪspəˈsɪfɪk tiː sel ɪnˈɡeɪdʒər/",
+"双特异性 T 细胞衔接器",
+"immuno",
+"tumor",
+"BiTE 连接 CD3"
+],
+[
+"immune-related adverse event",
+"/ɪˈmjuːn rɪˈleɪtɪd ædˈvɜːrs ɪˈvent/",
+"免疫相关不良事件",
+"immuno",
+"tumor",
+"irAE，检查点抑制剂并发症"
+],
+[
+"chemiluminescence immunoassay",
+"/ˌkemiloʊmɪˈnesns ˌɪmjənoʊˈæseɪ/",
+"化学发光免疫分析",
+"immuno",
+"lab",
+"CLIA，灵敏度高"
+],
+[
+"elispot",
+"/ˈelispɑːt/",
+"酶联免疫斑点试验",
+"immuno",
+"lab",
+"计数分泌细胞因子的细胞"
+],
+[
+"mixed lymphocyte reaction",
+"/mɪkst ˈlɪmfəsaɪt riˈækʃən/",
+"混合淋巴细胞反应",
+"immuno",
+"lab",
+"MLR，评估 T 细胞同种反应"
+],
+[
+"hla typing",
+"/ˌeɪtʃ el ˈeɪ ˈtaɪpɪŋ/",
+"HLA 配型",
+"immuno",
+"lab",
+"移植前组织相容性检测"
+],
+[
+"panel reactive antibody",
+"/ˈpænl riˈæktɪv ˈæntɪbɑːdi/",
+"群体反应性抗体",
+"immuno",
+"lab",
+"PRA，评估移植致敏程度"
+],
+[
+"anti-centromere antibody",
+"/ˌænti ˈsentrəmɪr ˈæntɪbɑːdi/",
+"抗着丝点抗体",
+"immuno",
+"lab",
+"局限型系统性硬化标志"
+],
+[
+"anti-scl-70 antibody",
+"/ˌænti ˌes siː ˈel ˈsevənti ˈæntɪbɑːdi/",
+"抗 Scl-70 抗体",
+"immuno",
+"lab",
+"弥漫型硬皮病，抗拓扑异构酶"
+],
+[
+"anti-jo-1 antibody",
+"/ˌænti ˌdʒeɪ ˈoʊ wʌn ˈæntɪbɑːdi/",
+"抗 Jo-1 抗体",
+"immuno",
+"lab",
+"抗合成酶综合征，间质性肺病"
+],
+[
+"anti-myeloperoxidase antibody",
+"/ˌænti ˌmaɪəloʊpəˈrɑːksɪdeɪs ˈæntɪbɑːdi/",
+"抗髓过氧化物酶抗体",
+"immuno",
+"lab",
+"p-ANCA，显微镜下多血管炎"
+],
+[
+"anti-gbm antibody",
+"/ˌænti ˌdʒiː biː ˈem ˈæntɪbɑːdi/",
+"抗肾小球基底膜抗体",
+"immuno",
+"lab",
+"抗基底膜抗体"
+],
+[
+"immunofixation electrophoresis",
+"/ˌɪmjənoʊfɪkˈseɪʃən ɪˌlektroʊfəˈriːsɪs/",
+"免疫固定电泳",
+"immuno",
+"lab",
+"鉴定 M 蛋白类型"
+],
+[
+"aluminum adjuvant",
+"/əˈluːmɪnəm ˈædʒəvənt/",
+"铝佐剂",
+"immuno",
+"vaccine",
+"吸附抗原，增强 Th2 应答"
+],
+[
+"viral vector vaccine",
+"/ˈvaɪrəl ˈvektər vækˈsiːn/",
+"病毒载体疫苗",
+"immuno",
+"vaccine",
+"腺病毒载体递送基因"
+],
+[
+"dna vaccine",
+"/ˌdiː en ˈeɪ vækˈsiːn/",
+"DNA 疫苗",
+"immuno",
+"vaccine",
+"质粒表达抗原，佐剂效应强"
+],
+[
+"virus-like particle vaccine",
+"/ˈvaɪrəs laɪk ˈpɑːrtɪkl vækˈsiːn/",
+"病毒样颗粒疫苗",
+"immuno",
+"vaccine",
+"VLP，无核酸但形态似病毒"
+],
+[
+"booster dose",
+"/ˈbuːstər doʊs/",
+"加强针",
+"immuno",
+"vaccine",
+"提高记忆应答"
+],
+[
+"prime-boost",
+"/praɪm buːst/",
+"初免-加强策略",
+"immuno",
+"vaccine",
+"不同载体序贯接种"
+],
+[
+"vaccine efficacy",
+"/vækˈsiːn ˈefɪkəsi/",
+"疫苗效力",
+"immuno",
+"vaccine",
+"随机试验中的保护率"
+],
+[
+"vaccine hesitancy",
+"/vækˈsiːn ˈhezɪtənsi/",
+"疫苗犹豫",
+"immuno",
+"vaccine",
+"延迟或拒绝接种"
+],
+[
+"bcg vaccine",
+"/ˌbiː siː ˈdʒiː vækˈsiːn/",
+"卡介苗",
+"immuno",
+"vaccine",
+"减毒牛分枝杆菌，防重症结核"
+],
+[
+"pneumococcal conjugate vaccine",
+"/ˌnuːməˈkɑːkəl ˈkɑːndʒəɡeɪt vækˈsiːn/",
+"肺炎球菌结合疫苗",
+"immuno",
+"vaccine",
+"PCV，多糖偶联载体蛋白"
+],
+[
+"arthus reaction",
+"/ˈɑːrθəs riˈækʃən/",
+"阿蒂斯反应",
+"immuno",
+"hypersensitivity",
+"局部免疫复合物型 III 型"
+],
+[
+"serum sickness",
+"/ˈsɪrəm ˈsɪknəs/",
+"血清病",
+"immuno",
+"hypersensitivity",
+"异种血清致 III 型超敏"
+],
+[
+"tuberculin reaction",
+"/tjʊˈbɜːrkjəlɪn riˈækʃən/",
+"结核菌素反应",
+"immuno",
+"hypersensitivity",
+"IV 型迟发型超敏"
+],
+[
+"atopy",
+"/ˈætəpi/",
+"特应性",
+"immuno",
+"hypersensitivity",
+"遗传倾向产生 IgE"
+],
+[
+"stevens-johnson syndrome",
+"/ˈstiːvənz ˈdʒɑːnsən ˈsɪndroʊm/",
+"史蒂文斯-约翰逊综合征",
+"immuno",
+"hypersensitivity",
+"重症药疹，表皮剥脱<10%"
+],
+[
+"dress syndrome",
+"/dres ˈsɪndroʊm/",
+"DRESS 综合征",
+"immuno",
+"hypersensitivity",
+"嗜酸增多伴全身症状药疹"
+],
+[
+"fick principle",
+"/fɪk ˈprɪnsəpl/",
+"Fick 原理",
+"physiology",
+"method",
+"耗氧量除以动静脉氧差得心输出量"
+],
+[
+"indicator dilution method",
+"/ˈɪndɪkeɪtər daɪˈluːʃən ˈmeθəd/",
+"指示剂稀释法",
+"physiology",
+"method",
+"注入染料测心输出量"
+],
+[
+"thermodilution",
+"/ˌθɜːrmoʊdaɪˈluːʃən/",
+"热稀释法",
+"physiology",
+"method",
+"冷盐水注入肺动脉测 CO"
+],
+[
+"body plethysmography",
+"/ˈbɑːdi ˌpleθɪzˈmɑːɡrəfi/",
+"体描记法",
+"physiology",
+"method",
+"测胸腔气体容积与气道阻力"
+],
+[
+"helium dilution",
+"/ˈhiːliəm daɪˈluːʃən/",
+"氦稀释法",
+"physiology",
+"method",
+"测功能残气量"
+],
+[
+"nitrogen washout",
+"/ˈnaɪtrədʒən ˈwɔːʃaʊt/",
+"氮洗出法",
+"physiology",
+"method",
+"单次呼吸测肺容量"
+],
+[
+"calcium imaging",
+"/ˈkælsiəm ˈɪmɪdʒɪŋ/",
+"钙成像",
+"physiology",
+"method",
+"荧光指示剂观察胞内钙"
+],
+[
+"optogenetics",
+"/ˌɑːptoʊdʒəˈnetɪks/",
+"光遗传学",
+"physiology",
+"method",
+"光控离子通道操纵神经元"
+],
+[
+"microdialysis",
+"/ˌmaɪkroʊdaɪˈæləsɪs/",
+"微透析",
+"physiology",
+"method",
+"探针采集组织间液递质"
+],
+[
+"near-infrared spectroscopy",
+"/nɪr ˌɪnfrəˈred spekˈtrɑːskəpi/",
+"近红外光谱",
+"physiology",
+"method",
+"无创测组织氧合"
+],
+[
+"laser doppler flowmetry",
+"/ˈleɪzər ˈdɑːplər ˈfloʊmətri/",
+"激光多普勒血流测定",
+"physiology",
+"method",
+"测皮肤微循环血流"
+],
+[
+"preoptic area",
+"/ˌpriːˈɑːptɪk ˈeriə/",
+"视前区",
+"physiology",
+"thermoreg",
+"体温调节中枢核心部位"
+],
+[
+"heat production",
+"/hiːt prəˈdʌkʃən/",
+"产热",
+"physiology",
+"thermoreg",
+"基础代谢与肌肉产热"
+],
+[
+"heat dissipation",
+"/hiːt ˌdɪsɪˈpeɪʃən/",
+"散热",
+"physiology",
+"thermoreg",
+"皮肤与呼吸蒸发散热"
+],
+[
+"radiation",
+"/ˌreɪdiˈeɪʃən/",
+"辐射散热",
+"physiology",
+"thermoreg",
+"占静息散热约 60%"
+],
+[
+"convection",
+"/kənˈvekʃən/",
+"对流散热",
+"physiology",
+"thermoreg",
+"空气流动带走热量"
+],
+[
+"insensible water loss",
+"/ɪnˈsensəbl ˈwɔːtər lɔːs/",
+"不显性失水",
+"physiology",
+"thermoreg",
+"皮肤蒸发与呼吸失水"
+],
+[
+"evaporative heat loss",
+"/ɪˈvæpəreɪtɪv hiːt lɔːs/",
+"蒸发散热",
+"physiology",
+"thermoreg",
+"汗液蒸发带走热量"
+],
+[
+"uncoupling protein 1",
+"/ʌnˈkʌplɪŋ ˈproʊtiːn wʌn/",
+"解偶联蛋白 1",
+"physiology",
+"thermoreg",
+"棕色脂肪产热，UCP1"
+],
+[
+"intermittent fever",
+"/ˌɪntərˈmɪtnt ˈfiːvər/",
+"间歇热",
+"physiology",
+"thermoreg",
+"体温骤升骤降至正常"
+],
+[
+"hypothalamic set point",
+"/ˌhaɪpoʊθəˈlæmɪk set pɔɪnt/",
+"下丘脑调定点",
+"physiology",
+"thermoreg",
+"发热时调定点上移"
+],
+[
+"excess post-exercise oxygen consumption",
+"/ɪkˈses poʊst ˈeksərsaɪz ˈɑːksɪdʒən kənˈsʌmpʃən/",
+"运动后过量氧耗",
+"physiology",
+"exercise",
+"EPOC，偿还氧债"
+],
+[
+"exercise pressor response",
+"/ˈeksərsaɪz ˈpresər rɪˈspɑːns/",
+"运动升压反应",
+"physiology",
+"exercise",
+"肌肉代谢物反射升血压"
+],
+[
+"ventilatory threshold",
+"/ˈventɪlətɔːri ˈθreʃhoʊld/",
+"通气阈",
+"physiology",
+"exercise",
+"乳酸堆积致通气陡增"
+],
+[
+"respiratory exchange ratio",
+"/ˈrespərətɔːri ɪksˈtʃeɪndʒ ˈreɪʃioʊ/",
+"呼吸交换率",
+"physiology",
+"exercise",
+"RER=CO₂ 排出/O₂ 摄入"
+],
+[
+"eccentric contraction",
+"/ɪkˈsentrɪk kənˈtrækʃən/",
+"离心收缩",
+"physiology",
+"exercise",
+"肌肉拉长时发力，易损伤"
+],
+[
+"concentric contraction",
+"/kənˈsentrɪk kənˈtrækʃən/",
+"向心收缩",
+"physiology",
+"exercise",
+"肌肉缩短时发力"
+],
+[
+"delayed onset muscle soreness",
+"/dɪˈleɪd ˈɑːnset ˈmʌsl ˈsɔːrnəs/",
+"延迟性肌肉酸痛",
+"physiology",
+"exercise",
+"DOMS，运动后 1-3 天"
+],
+[
+"overtraining syndrome",
+"/ˌoʊvərˈtreɪnɪŋ ˈsɪndroʊm/",
+"过度训练综合征",
+"physiology",
+"exercise",
+"疲劳蓄积、成绩下降"
+],
+[
+"six-minute walk test",
+"/sɪks ˈmɪnɪt wɔːk test/",
+"六分钟步行试验",
+"physiology",
+"exercise",
+"评估心肺运动耐力"
+],
+[
+"exercise-induced bronchoconstriction",
+"/ˈeksərsaɪz ɪnˈduːst ˌbrɑːŋkoʊkənˈstrɪkʃən/",
+"运动性支气管痉挛",
+"physiology",
+"exercise",
+"冷干空气诱发气道收缩"
+],
+[
+"fetal shunt",
+"/ˈfiːtl ʃʌnt/",
+"胎儿分流",
+"physiology",
+"fetal",
+"三处分流通道"
+],
+[
+"placental blood flow",
+"/pləˈsentl blʌd floʊ/",
+"胎盘血流",
+"physiology",
+"fetal",
+"脐血流约 500 mL/min"
+],
+[
+"neonatal circulation",
+"/ˌniːoʊˈneɪtl ˌsɜːrkjəˈleɪʃən/",
+"新生儿循环",
+"physiology",
+"fetal",
+"出生后分流关闭"
+],
+[
+"fetal heart rate monitoring",
+"/ˈfiːtl hɑːrt reɪt ˈmɑːnɪtərɪŋ/",
+"胎心监护",
+"physiology",
+"fetal",
+"看变异与减速"
+],
+[
+"fetal oxygenation",
+"/ˈfiːtl ˌɑːksɪdʒəˈneɪʃən/",
+"胎儿氧合",
+"physiology",
+"fetal",
+"依赖胎盘氧交换"
+],
+[
+"fetal growth restriction",
+"/ˈfiːtl ɡroʊθ rɪˈstrɪkʃən/",
+"胎儿生长受限",
+"physiology",
+"fetal",
+"FGR，小于孕龄"
+],
+[
+"fetal breathing movement",
+"/ˈfiːtl ˈbriːðɪŋ ˈmuːvmənt/",
+"胎儿呼吸运动",
+"physiology",
+"fetal",
+"生物物理评分指标之一"
+],
+[
+"nonstress test",
+"/nɑːnˈstres test/",
+"无应激试验",
+"physiology",
+"fetal",
+"NST，看胎心加速反应"
+],
+[
+"biophysical profile",
+"/ˌbaɪoʊˈfɪzɪkl ˈproʊfaɪl/",
+"生物物理评分",
+"physiology",
+"fetal",
+"BPP，五项指标共 10 分"
+],
+[
+"amniotic fluid index",
+"/ˌæmniˈɑːtɪk ˈfluːɪd ˈɪndeks/",
+"羊水指数",
+"physiology",
+"fetal",
+"AFI，四象限羊水深度之和"
+],
+[
+"lecithin-sphingomyelin ratio",
+"/ˈlesɪθɪn ˌsfɪŋɡoʊˈmaɪəlɪn ˈreɪʃioʊ/",
+"卵磷脂/鞘磷脂比值",
+"physiology",
+"fetal",
+"L/S>2 提示胎肺成熟"
+],
+[
+"myotendinous junction",
+"/ˌmaɪoʊˈtendɪnəs ˈdʒʌŋkʃən/",
+"肌腱接头",
+"physiology",
+"muscle",
+"肌肉与肌腱连接处"
+],
+[
+"myosin light chain kinase",
+"/ˈmaɪəsɪn laɪt tʃeɪn ˈkaɪneɪs/",
+"肌球蛋白轻链激酶",
+"physiology",
+"muscle",
+"MLCK，平滑肌收缩"
+],
+[
+"actin-myosin cross bridge",
+"/ˈæktɪn ˈmaɪəsɪn krɔːs brɪdʒ/",
+"肌动球蛋白横桥",
+"physiology",
+"muscle",
+"横桥摆动产生力"
+],
+[
+"troponin c",
+"/ˈtroʊpənɪn siː/",
+"肌钙蛋白 C",
+"physiology",
+"muscle",
+"结合钙触发收缩"
+],
+[
+"excitation-contraction coupling",
+"/ˌeksɪˈteɪʃən kənˈtrækʃən ˈkʌplɪŋ/",
+"兴奋-收缩耦联",
+"physiology",
+"muscle",
+"动作电位转成钙释放"
+],
+[
+"t-tubule",
+"/ˈtiː tjuːbjuːl/",
+"横小管",
+"physiology",
+"muscle",
+"动作电位深入肌纤维"
+],
+[
+"calcium-induced calcium release",
+"/ˈkælsiəm ɪnˈduːst ˈkælsiəm rɪˈliːs/",
+"钙致钙释放",
+"physiology",
+"muscle",
+"CICR，心肌收缩"
+],
+[
+"ryanodine receptor",
+"/raɪˈænədiːn rɪˈseptər/",
+"兰尼碱受体",
+"physiology",
+"muscle",
+"肌浆网钙释放通道"
+],
+[
+"length-tension relationship",
+"/leŋθ ˈtenʃən rɪˈleɪʃənʃɪp/",
+"长度-张力关系",
+"physiology",
+"muscle",
+"最适初长度时张力最大"
+],
+[
+"stretch reflex",
+"/stretʃ ˈriːfleks/",
+"牵张反射",
+"physiology",
+"muscle",
+"肌梭介导的单突触反射"
+],
+[
+"henderson-hasselbalch equation",
+"/ˈhendərsən ˈhæsəlbælk ɪˈkweɪʒən/",
+"酸碱平衡方程",
+"physiology",
+"acidbase",
+"pH 与 HCO3 关系"
+],
+[
+"standard bicarbonate",
+"/ˈstændərd baɪˈkɑːrbənət/",
+"标准碳酸氢盐",
+"physiology",
+"acidbase",
+"标准化条件下测得的 HCO₃⁻"
+],
+[
+"urinary anion gap",
+"/ˈjʊrɪneri ˈænaɪən ɡæp/",
+"尿阴离子间隙",
+"physiology",
+"acidbase",
+"鉴别腹泻与肾小管酸中毒"
+],
+[
+"mixed acid-base disorder",
+"/mɪkst ˈæsɪd beɪs dɪsˈɔːrdər/",
+"混合性酸碱失衡",
+"physiology",
+"acidbase",
+"两种以上原发紊乱并存"
+],
+[
+"hyperchloremic acidosis",
+"/ˌhaɪpərklɔːˈriːmɪk ˌæsɪˈdoʊsɪs/",
+"高氯性酸中毒",
+"physiology",
+"acidbase",
+"正常阴离子间隙型"
+],
+[
+"lactic acidosis",
+"/ˈlæktɪk ˌæsɪˈdoʊsɪs/",
+"乳酸酸中毒",
+"physiology",
+"acidbase",
+"组织低灌注致乳酸堆积"
+],
+[
+"renal tubular acidosis",
+"/ˈriːnl ˈtjuːbjələr ˌæsɪˈdoʊsɪs/",
+"肾小管酸中毒",
+"physiology",
+"acidbase",
+"RTA，肾小管排酸障碍"
+],
+[
+"carbonic anhydrase",
+"/kɑːrˈbɑːnɪk ænˈhaɪdreɪs/",
+"碳酸酐酶",
+"physiology",
+"acidbase",
+"CO₂+H₂O⇌H₂CO₃"
+],
+[
+"chloride-resistant alkalosis",
+"/ˈklɔːraɪd rɪˈzɪstənt ˌælkəˈloʊsɪs/",
+"氯抵抗性碱中毒",
+"physiology",
+"acidbase",
+"盐皮质激素过多，补氯无效"
+],
+[
+"reticulocyte count",
+"/rɪˈtɪkjəloʊsaɪt kaʊnt/",
+"网织红细胞计数",
+"physiology",
+"blood",
+"反映骨髓红系造血"
+],
+[
+"2,3-dpg",
+"/ˌtuː θriː diː piː ˈdʒiː/",
+"2,3-二磷酸甘油酸",
+"physiology",
+"blood",
+"升高使氧离曲线右移"
+],
+[
+"total iron binding capacity",
+"/ˈtoʊtl ˈaɪərn ˈbaɪndɪŋ kəˈpæsəti/",
+"总铁结合力",
+"physiology",
+"blood",
+"TIBC，反映转铁蛋白"
+],
+[
+"transferrin saturation",
+"/trænsˈferɪn ˌsætʃəˈreɪʃən/",
+"转铁蛋白饱和度",
+"physiology",
+"blood",
+"缺铁时下降，血色病升高"
+],
+[
+"hepcidin",
+"/hepˈsaɪdɪn/",
+"铁调素",
+"physiology",
+"blood",
+"抑制肠道铁吸收与巨噬释放"
+],
+[
+"intrinsic factor",
+"/ɪnˈtrɪnsɪk ˈfæktər/",
+"内因子",
+"physiology",
+"blood",
+"壁细胞分泌，促 B12 吸收"
+],
+[
+"von willebrand factor",
+"/fɑːn ˈvɪləbrɑːnt ˈfæktər/",
+"血管性血友病因子",
+"physiology",
+"blood",
+"vWF，介导血小板黏附"
+],
+[
+"thromboxane a2",
+"/θrɑːmˈbɑːkseɪn ˌeɪ ˈtuː/",
+"血栓素 A2",
+"physiology",
+"blood",
+"血小板释放，促聚集缩血管"
+],
+[
+"tissue plasminogen activator",
+"/ˈtɪʃuː plæzˈmɪnədʒən ˈæktɪveɪtər/",
+"组织型纤溶酶原激活物",
+"physiology",
+"blood",
+"tPA，溶栓药物"
+],
+[
+"hemizygous",
+"/ˌhemiˈzaɪɡəs/",
+"半合子",
+"genetics",
+"mendel",
+"男性 X 染色体基因仅一份"
+],
+[
+"compound heterozygote",
+"/ˈkɑːmpaʊnd ˌhetəroʊˈzaɪɡoʊt/",
+"复合杂合子",
+"genetics",
+"mendel",
+"同一基因两个不同突变"
+],
+[
+"pseudoautosomal region",
+"/ˌsuːdoʊɔːtoʊˈsoʊml ˈriːdʒən/",
+"假常染色体区",
+"genetics",
+"mendel",
+"X/Y 同源区可发生交换"
+],
+[
+"allelic heterogeneity",
+"/əˈliːlɪk ˌhetərədʒəˈniːəti/",
+"等位基因异质性",
+"genetics",
+"mendel",
+"同病由同一基因不同突变"
+],
+[
+"loss-of-function mutation",
+"/lɔːs əv ˈfʌŋkʃən mjuːˈteɪʃən/",
+"功能丧失突变",
+"genetics",
+"mutation",
+"LOF，蛋白功能减弱或消失"
+],
+[
+"gain-of-function mutation",
+"/ɡeɪn əv ˈfʌŋkʃən mjuːˈteɪʃən/",
+"功能获得突变",
+"genetics",
+"mutation",
+"GOF，多为显性，如 FGFR3"
+],
+[
+"dominant negative mutation",
+"/ˈdɑːmɪnənt ˈneɡətɪv mjuːˈteɪʃən/",
+"显性负性突变",
+"genetics",
+"mutation",
+"突变产物干扰正常等位产物"
+],
+[
+"splice site mutation",
+"/splaɪs saɪt mjuːˈteɪʃən/",
+"剪接位点突变",
+"genetics",
+"mutation",
+"影响内含子切除，常致截短"
+],
+[
+"nonsense-mediated decay",
+"/ˈnɑːnsens ˈmiːdieɪtɪd dɪˈkeɪ/",
+"无义介导的 mRNA 降解",
+"genetics",
+"mutation",
+"NMD，清除提前终止密码子"
+],
+[
+"copy number variation",
+"/ˈkɑːpi ˈnʌmbər ˌveriˈeɪʃən/",
+"拷贝数变异",
+"genetics",
+"mutation",
+"CNV，片段重复或缺失"
+],
+[
+"single nucleotide polymorphism",
+"/ˈsɪŋɡl ˈnuːkliətaɪd ˌpɑːliˈmɔːrfɪzəm/",
+"单核苷酸多态性",
+"genetics",
+"mutation",
+"SNP，人群常见单碱基变异"
+],
+[
+"indel",
+"/ˈɪndel/",
+"插入缺失",
+"genetics",
+"mutation",
+"插入或缺失"
+],
+[
+"achondroplasia",
+"/eɪˌkɑːndroʊˈpleɪʒə/",
+"软骨发育不全",
+"genetics",
+"disease",
+"FGFR3 显性突变，短肢侏儒"
+],
+[
+"familial hypercholesterolemia",
+"/fəˈmɪliəl ˌhaɪpərkəˌlestərəˈliːmiə/",
+"家族性高胆固醇血症",
+"genetics",
+"disease",
+"LDL 受体缺陷，早发冠心病"
+],
+[
+"hereditary spherocytosis",
+"/həˈredɪteri ˌsfɪroʊsaɪˈtoʊsɪs/",
+"球形红细胞增多症",
+"genetics",
+"disease",
+"膜蛋白缺陷，脾切除有效"
+],
+[
+"spinocerebellar ataxia",
+"/ˌspaɪnoʊˌserəˈbelər əˈtæksiə/",
+"脊髓小脑性共济失调",
+"genetics",
+"disease",
+"CAG 重复，共济失调"
+],
+[
+"myotonic dystrophy",
+"/ˌmaɪəˈtɑːnɪk ˈdɪstrəfi/",
+"强直性肌营养不良",
+"genetics",
+"disease",
+"CTG 重复，肌强直多系统受累"
+],
+[
+"osteogenesis imperfecta",
+"/ˌɑːstioʊˈdʒenəsɪs ˌɪmpərˈfektə/",
+"成骨不全",
+"genetics",
+"disease",
+"I 型胶原缺陷，蓝巩膜易骨折"
+],
+[
+"histone methylation",
+"/ˈhɪstoʊn ˌmeθəˈleɪʃən/",
+"组蛋白甲基化",
+"genetics",
+"genome",
+"可激活或抑制转录"
+],
+[
+"histone acetyltransferase",
+"/ˈhɪstoʊn ˌæsətəlˈtrænsfəreɪs/",
+"组蛋白乙酰转移酶",
+"genetics",
+"genome",
+"HAT，染色质松弛"
+],
+[
+"promoter region",
+"/prəˈmoʊtər ˈriːdʒən/",
+"启动子区",
+"genetics",
+"genome",
+"结合 RNA 聚合酶"
+],
+[
+"long noncoding rna",
+"/lɔːŋ ˌnɑːnˈkoʊdɪŋ ˌɑːr en ˈeɪ/",
+"长链非编码 RNA",
+"genetics",
+"genome",
+"lncRNA，调控表达"
+],
+[
+"diploid",
+"/ˈdɪplɔɪd/",
+"二倍体",
+"genetics",
+"chromosome",
+"di- 双+ploid 倍体"
+],
+[
+"g-banding",
+"/dʒiː ˈbændɪŋ/",
+"G 显带",
+"genetics",
+"chromosome",
+"胰酶+吉姆萨染出条带"
+],
+[
+"fluorescence in situ hybridization",
+"/flʊˈresns ɪn ˈsaɪtuː ˌhaɪbrɪdəˈzeɪʃən/",
+"荧光原位杂交",
+"genetics",
+"chromosome",
+"FISH，探针定位特定序列"
+],
+[
+"uniparental disomy",
+"/ˌjuːnɪpəˈrentl daɪˈsoʊmi/",
+"单亲二体",
+"genetics",
+"chromosome",
+"两条同源染色体来自一方"
+],
+[
+"chromosomal microarray",
+"/ˌkroʊməˈsoʊml ˈmaɪkroʊəreɪ/",
+"染色体微阵列",
+"genetics",
+"chromosome",
+"CMA，检测微缺失"
+],
+[
+"predictive testing",
+"/prɪˈdɪktɪv ˈtestɪŋ/",
+"预测性检测",
+"genetics",
+"counseling",
+"无症状者检测晚发致病基因"
+],
+[
+"cascade screening",
+"/kæˈskeɪd ˈskriːnɪŋ/",
+"级联筛查",
+"genetics",
+"counseling",
+"确诊后逐一筛查家系成员"
+],
+[
+"noninvasive prenatal testing",
+"/ˌnɑːnɪnˈveɪsɪv priːˈneɪtl ˈtestɪŋ/",
+"无创产前检测",
+"genetics",
+"counseling",
+"NIPT，母血游离胎儿 DNA"
+],
+[
+"anticipation",
+"",
+"遗传早现",
+"genetics",
+"single_gene",
+"三核苷酸重复逐代扩增"
+],
+[
+"loss of heterozygosity",
+"",
+"杂合性缺失",
+"genetics",
+"single_gene",
+"LOH：抑癌基因二次打击"
+],
+[
+"gonadal mosaicism",
+"",
+"性腺嵌合",
+"genetics",
+"single_gene",
+"生殖腺嵌合致再发风险"
+],
+[
+"de novo mutation",
+"",
+"新发突变",
+"genetics",
+"single_gene",
+"父母正常、子代新发"
+],
+[
+"autosomal dominant inheritance",
+"",
+"常染色体显性遗传",
+"genetics",
+"single_gene",
+"auto- 自体 + dominant 显性"
+]
+]
